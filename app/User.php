@@ -17,7 +17,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'username', 'email', 'password', 'role_id', 'newsSize_id'
+        'username', 'email', 'password', 'role_id', 'news_size_id'
     ];
 
     /**
@@ -45,13 +45,21 @@ class User extends Authenticatable
      */
     public function role()
     {
-        return $this->belongsTo('App\Role');
+        return $this->belongsTo('App\Role', 'role_id');
     }
-    public function newsSize()
+    public function news_size()
     {
-        return $this->belongsTo('App\NewsSize');
+        return $this->belongsTo('App\NewsSize', 'news_size_id');
     }
-
+    public function categories() {
+        return $this->belongsToMany(Category::class);
+    }
+    public function authors() {
+        return $this->belongsToMany(Author::class);
+    }
+    public function news() {
+        return $this->belongsToMany(News::class);
+    }
     /**
      * Verifies if user's role belongs to a list of given roles
      *

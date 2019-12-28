@@ -16,5 +16,8 @@ class Author extends Model
     public function job() {
         return $this->belongsTo('App\Job', 'job_id');
     }
+    public function users() {
+        return $this->belongsToMany(User::class);
+    }
 
 }

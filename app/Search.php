@@ -11,12 +11,12 @@ class Search extends Model
     use softDeletes;
 
     protected  $fillable = [
-        'text', 'image', 'user_id', 'searchType_id'
+        'text', 'image', 'user_id', 'search_type_id'
     ];
     public function user() {
         return $this->belongsTo('App\User', 'user_id');
     }
-    public function searchType() {
-        return $this->belongsTo('App\SearchType', 'searchType_id');
+    public function search_type() {
+        return $this->belongsTo('App\SearchType', 'search_type_id');
     }
 }

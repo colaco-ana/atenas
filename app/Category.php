@@ -13,4 +13,11 @@ class Category extends Model
     protected  $fillable = [
         'category', 'image'
     ];
+
+    public function publications() {
+        return $this->belongsToMany(Publication::class);
+    }
+    public function users() {
+        return $this->belongsToMany(User::class);
+    }
 }
