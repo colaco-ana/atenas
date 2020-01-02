@@ -3,13 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="c8ed9ad9-a455-4603-b6b8-e9fa934d866d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Author.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Author.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Category.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Category.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/News.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/News.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Publication.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Publication.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Search.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Search.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Topic.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Topic.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_12_27_172221_create_authors_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_12_27_172221_create_authors_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_12_27_173254_create_categories_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_12_27_173254_create_categories_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_12_27_174406_create_news_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_12_27_174406_create_news_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_12_27_175430_create_topics_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_12_27_175430_create_topics_table.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -123,18 +120,18 @@
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../laravel-base-aula" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/database/migrations" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\laravel-base\database\migrations" />
       <recent name="C:\xampp\htdocs\laravel-base" />
       <recent name="$PROJECT_DIR$/resources/views/bo/partials" />
       <recent name="$PROJECT_DIR$/resources/views/bo/users" />
       <recent name="$PROJECT_DIR$/resources/views/layouts" />
-      <recent name="$PROJECT_DIR$/app/Http/Controllers/Backoffice" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -162,7 +159,8 @@
       <workItem from="1569171858712" duration="7870000" />
       <workItem from="1577373286072" duration="2258000" />
       <workItem from="1577441270682" duration="2435000" />
-      <workItem from="1577445275732" duration="11964000" />
+      <workItem from="1577445275732" duration="12631000" />
+      <workItem from="1577982337610" duration="3006000" />
     </task>
     <servers />
   </component>

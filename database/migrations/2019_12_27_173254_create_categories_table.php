@@ -20,24 +20,6 @@ class CreateCategoriesTable extends Migration
             $table->timestamps();
             $table->softDeletes();
         });
-        Schema::create('category_publication', function (Blueprint $table) {
-            $table->unsignedBigInteger('category_id');
-            $table->unsignedBigInteger('publication_id');
-            $table->unique(['category_id', 'publication_id']);
-            $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');
-            $table->foreign('publication_id')->references('id')->on('publications')->onDelete('cascade');
-            $table->timestamps();
-            $table->softDeletes();
-        });
-        Schema::create('category_user', function (Blueprint $table) {
-            $table->unsignedBigInteger('category_id');
-            $table->unsignedBigInteger('user_id');
-            $table->unique(['category_id', 'user_id']);
-            $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
-            $table->timestamps();
-            $table->softDeletes();
-        });
 
     }
 

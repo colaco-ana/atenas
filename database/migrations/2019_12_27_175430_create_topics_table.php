@@ -19,15 +19,6 @@ class CreateTopicsTable extends Migration
             $table->timestamps();
             $table->softDeletes();
         });
-        Schema::create('news_topics', function (Blueprint $table) {
-            $table->unsignedBigInteger('news_id');
-            $table->unsignedBigInteger('topic_id');
-            $table->unique(['news_id', 'topic_id']);
-            $table->foreign('news_id')->references('id')->on('news')->onDelete('cascade');
-            $table->foreign('topic_id')->references('id')->on('topics')->onDelete('cascade');
-            $table->timestamps();
-            $table->softDeletes();
-        });
     }
 
     /**
