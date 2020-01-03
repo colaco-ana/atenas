@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateAuthorUserTable extends Migration
+class CreateAuthorUsersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateAuthorUserTable extends Migration
      */
     public function up()
     {
-        Schema::create('author_user', function (Blueprint $table) {
+        Schema::create('author_users', function (Blueprint $table) {
             $table->unsignedBigInteger('author_id');
             $table->unsignedBigInteger('user_id');
             $table->unique(['author_id', 'user_id']);
@@ -31,6 +31,6 @@ class CreateAuthorUserTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('author_user');
+        Schema::dropIfExists('author_users');
     }
 }

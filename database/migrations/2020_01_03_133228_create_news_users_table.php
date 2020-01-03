@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateNewsTopicTable extends Migration
+class CreateNewsUsersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,13 @@ class CreateNewsTopicTable extends Migration
      */
     public function up()
     {
-        Schema::create('news_topic', function (Blueprint $table) {
+        Schema::create('news_users', function (Blueprint $table) {
             $table->unsignedBigInteger('news_id');
-            $table->unsignedBigInteger('topic_id');
-            $table->unique(['news_id', 'topic_id']);
+            $table->unsignedBigInteger('user_id');
+            $table->unique(['news_id', 'user_id']);
             $table->foreign('news_id')->references('id')->on('news')->onDelete('cascade');
-            $table->foreign('topic_id')->references('id')->on('topics')->onDelete('cascade');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->string('flag');
             $table->timestamps();
             $table->softDeletes();
         });
@@ -31,6 +32,6 @@ class CreateNewsTopicTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('news_topic');
+        Schema::dropIfExists('news_users');
     }
 }
