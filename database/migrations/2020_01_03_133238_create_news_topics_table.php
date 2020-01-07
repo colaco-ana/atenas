@@ -14,6 +14,7 @@ class CreateNewsTopicsTable extends Migration
     public function up()
     {
         Schema::create('news_topics', function (Blueprint $table) {
+            $table->bigIncrements('id');
             $table->unsignedBigInteger('news_id');
             $table->unsignedBigInteger('topic_id');
             $table->unique(['news_id', 'topic_id']);

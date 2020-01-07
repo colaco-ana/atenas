@@ -88,7 +88,7 @@ class NewsUserController extends Controller
         $newsUser->update($data);
 
         $response=[
-            'message'=>'Relação entre noticia e Utilizador Atualizada',
+            'message'=>'Relação entre noticia e User Atualizada',
             'data'=>$newsUser,
             'result'=>'ok'
         ];
@@ -106,6 +106,6 @@ class NewsUserController extends Controller
     {
         //
         $newsUser->delete();
-        return 'deleted';
+        return 'Relação entre Notícia e User Apagada';
     }
 }

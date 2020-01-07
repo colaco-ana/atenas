@@ -89,12 +89,12 @@ class CategoryController extends Controller
         //
         $data=$request->all();
 
-        /* if($request->hasFile('image')){
+        if($request->hasFile('image')){
              $file=$request->file('image')->store('images/categories');
 
              $data['image']=$file;
 
-         }*/
+        }
 
         $category->update($data);
 
@@ -116,6 +116,6 @@ class CategoryController extends Controller
     {
         //
         $category->delete();
-        return 'deleted';
+        return 'Categoria Apagada';
     }
 }

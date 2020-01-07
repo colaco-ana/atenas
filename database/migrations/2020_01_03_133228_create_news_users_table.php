@@ -14,6 +14,7 @@ class CreateNewsUsersTable extends Migration
     public function up()
     {
         Schema::create('news_users', function (Blueprint $table) {
+            $table->bigIncrements('id');
             $table->unsignedBigInteger('news_id');
             $table->unsignedBigInteger('user_id');
             $table->unique(['news_id', 'user_id']);

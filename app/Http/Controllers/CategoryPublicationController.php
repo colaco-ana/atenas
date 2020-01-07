@@ -42,7 +42,7 @@ class CategoryPublicationController extends Controller
         $categoryPublication=CategoryPublication::create($data);
 
         $response=[
-            'message'=>'Relação entre Categoria e Publicação Adicionadas',
+            'message'=>'Relação entre Categoria e Publicação Adicionada',
             'data'=>$categoryPublication,
             'result'=>'ok'
         ];
@@ -107,6 +107,6 @@ class CategoryPublicationController extends Controller
     {
         //
         $categoryPublication->delete();
-        return 'deleted';
+        return 'Relação entre Categoria e Publicação Apagada';
     }
 }

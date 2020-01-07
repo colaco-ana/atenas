@@ -21,7 +21,7 @@ class SearchsTableSeeder extends Seeder
 
         \App\Search::create([
             'text'=>'África',
-            'image'=>'africa.jpg',
+            'image'=>'images/searches/africa.jpg',
             'user_id'=>4,
             'search_type_id'=>2
         ]);

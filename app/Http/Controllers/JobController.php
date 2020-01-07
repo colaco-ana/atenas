@@ -42,7 +42,7 @@ class JobController extends Controller
         $job=Job::create($data);
 
         $response=[
-            'message'=>'Job Adicionado',
+            'message'=>'Profissão Adicionada',
             'data'=>$job,
             'result'=>'ok'
         ];
@@ -88,7 +88,7 @@ class JobController extends Controller
         $job->update($data);
 
         $response=[
-            'message'=>'Trabalho Atualizado',
+            'message'=>'Profissão Atualizada',
             'data'=>$job,
             'result'=>'ok'
         ];
@@ -105,6 +105,6 @@ class JobController extends Controller
     {
         //
         $job->delete();
-        return 'deleted';
+        return 'Profissão Apagada';
     }
 }

@@ -107,6 +107,6 @@ class CategoryUserController extends Controller
     {
         //
         $categoryUser->delete();
-        return 'deleted';
+        return 'Relação entre Categoria e Utilizador Apagada';
     }
 }

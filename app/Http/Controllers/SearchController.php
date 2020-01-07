@@ -39,6 +39,10 @@ class SearchController extends Controller
         //
         $data=$request->all(); //array com as informações q mandar por post
 
+        $file=$request->file('image')->store('images/searches');
+        //return $file;
+        $data['image']=$file;
+
         $search=Search::create($data);
 
         $response=[
@@ -84,11 +88,17 @@ class SearchController extends Controller
     {
         //
         $data=$request->all();
+        if($request->hasFile('image')){
+            $file=$request->file('image')->store('images/searches');
+
+            $data['image']=$file;
+
+        }
 
         $search->update($data);
 
         $response=[
-            'message'=>'Procura Atualizada',
+            'message'=>'Pesquisa Atualizada',
             'data'=>$search,
             'result'=>'ok'
         ];
@@ -105,6 +115,6 @@ class SearchController extends Controller
     {
         //
         $search->delete();
-        return 'deleted';
+        return 'Pesquisa Apagada';
     }
 }

@@ -105,6 +105,6 @@ class TopicController extends Controller
     {
         //
         $topic->delete();
-        return 'deleted';
+        return 'Tópico Apagado';
     }
 }

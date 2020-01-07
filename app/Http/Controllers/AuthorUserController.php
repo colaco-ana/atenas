@@ -90,7 +90,7 @@ class AuthorUserController extends Controller
 
         $response=[
             'data'=>$authorUser,
-            'message'=>'User do Autor Atualizada',
+            'message'=>'Autor Favorito do User Atualizado',
             'result'=>'ok'
         ];
         return response($response);
@@ -106,7 +106,7 @@ class AuthorUserController extends Controller
     {
         //
         $authorUser->delete();
-        return 'deleted';
+        return 'Autor Favorito do User Apagado';
 
     }
 }

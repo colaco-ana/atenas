@@ -14,17 +14,17 @@ class CategorysTableSeeder extends Seeder
         //
         \App\Category::create([
             'category' =>'Política',
-            'image'=>'politica.jpg'
+            'image'=>'images/categories/politica.jpg'
         ]);
 
         \App\Category::create([
             'category' =>'Sociedade',
-            'image'=>'sociedade.jpg'
+            'image'=>'images/categories/sociedade.jpg'
         ]);
 
         \App\Category::create([
             'category' =>'Local',
-            'image'=>'lcoal.jpg'
+            'image'=>'images/categories/local.jpg'
         ]);
 
         \App\Category::create([

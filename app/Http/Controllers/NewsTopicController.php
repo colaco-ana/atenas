@@ -88,7 +88,7 @@ class NewsTopicController extends Controller
         $newsTopic->update($data);
 
         $response=[
-            'message'=>'Relação entre noticia e tópico Atualizada',
+            'message'=>'Relação entre Tópico e Noticia Atualizada',
             'data'=>$newsTopic,
             'result'=>'ok'
         ];
@@ -105,7 +105,7 @@ class NewsTopicController extends Controller
     {
         //
         $newsTopic->delete();
-        return 'deleted';
+        return 'Relação entre Tópico e Noticia Apagada';
 
     }
 }

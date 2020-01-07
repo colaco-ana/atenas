@@ -14,6 +14,7 @@ class CreateCategoryUsersTable extends Migration
     public function up()
     {
         Schema::create('category_users', function (Blueprint $table) {
+            $table->bigIncrements('id');
             $table->unsignedBigInteger('category_id');
             $table->unsignedBigInteger('user_id');
             $table->unique(['category_id', 'user_id']);

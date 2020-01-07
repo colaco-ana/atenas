@@ -14,6 +14,7 @@ class CreateAuthorUsersTable extends Migration
     public function up()
     {
         Schema::create('author_users', function (Blueprint $table) {
+            $table->bigIncrements('id');
             $table->unsignedBigInteger('author_id');
             $table->unsignedBigInteger('user_id');
             $table->unique(['author_id', 'user_id']);

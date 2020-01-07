@@ -14,6 +14,7 @@ class CreateCategoryPublicationsTable extends Migration
     public function up()
     {
         Schema::create('category_publications', function (Blueprint $table) {
+            $table->bigIncrements('id');
             $table->unsignedBigInteger('category_id');
             $table->unsignedBigInteger('publication_id');
             $table->unique(['category_id', 'publication_id']);

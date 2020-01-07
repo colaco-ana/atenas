@@ -105,6 +105,6 @@ class PublicationController extends Controller
     {
         //
         $publication->delete();
-        return 'deleted';
+        return 'Publicação Apagada';
     }
 }

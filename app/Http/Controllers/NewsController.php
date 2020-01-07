@@ -88,12 +88,12 @@ class NewsController extends Controller
     {
         //
         $data=$request->all();
-        /* if($request->hasFile('image')){
+        if($request->hasFile('image')){
             $file=$request->file('image')->store('images/news');
 
             $data['image']=$file;
 
-        }*/
+        }
 
         $news->update($data);
 
@@ -115,6 +115,6 @@ class NewsController extends Controller
     {
         //
         $news->delete();
-        return 'deleted';
+        return 'Notícia Apagada';
     }
 }

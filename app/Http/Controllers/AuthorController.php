@@ -89,7 +89,7 @@ class AuthorController extends Controller
         $author->update($data);
 
         $response=[
-            'message'=>'Autor Atualizada',
+            'message'=>'Autor Atualizado',
             'data'=>$author,
             'result'=>'ok'
         ];
@@ -107,6 +107,6 @@ class AuthorController extends Controller
     {
         //
         $author->delete();
-        return 'deleted';
+        return 'Autor Apagado';
     }
 }
