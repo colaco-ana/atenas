@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\CategoryPublication;
+use App\Http\Requests\CategoryPublicationStoreRequest;
 use Illuminate\Http\Request;
 
 class CategoryPublicationController extends Controller
@@ -34,7 +35,7 @@ class CategoryPublicationController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CategoryPublicationStoreRequest $request)
     {
         //
         $data=$request->all(); //array com as informações q mandar por post
@@ -80,7 +81,7 @@ class CategoryPublicationController extends Controller
      * @param  \App\CategoryPublication  $categoryPublication
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, CategoryPublication $categoryPublication)
+    public function update(CategoryPublicationStoreRequest $request, CategoryPublication $categoryPublication)
     {
         //
         $data=$request->all();

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\JobStoreRequest;
 use App\Job;
 use Illuminate\Http\Request;
 
@@ -34,7 +35,7 @@ class JobController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(JobStoreRequest $request)
     {
         //
         $data=$request->all(); //array com as informações q mandar por post
@@ -80,7 +81,7 @@ class JobController extends Controller
      * @param  \App\Job  $job
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Job $job)
+    public function update(JobStoreRequest $request, Job $job)
     {
         //
         $data=$request->all();

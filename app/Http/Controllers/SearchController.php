@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\SearchStoreRequest;
 use App\Search;
 use Illuminate\Http\Request;
 
@@ -34,7 +35,7 @@ class SearchController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(SearchStoreRequest $request)
     {
         //
         $data=$request->all(); //array com as informações q mandar por post
@@ -84,7 +85,7 @@ class SearchController extends Controller
      * @param  \App\Search  $search
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Search $search)
+    public function update(SearchStoreRequest $request, Search $search)
     {
         //
         $data=$request->all();

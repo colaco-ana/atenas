@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Author;
+use App\Http\Requests\AuthorStoreRequest;
 use Illuminate\Http\Request;
 
 class AuthorController extends Controller
@@ -34,7 +35,7 @@ class AuthorController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(AuthorStoreRequest $request)
     {
         //
         $data=$request->all(); //array com as informações q mandar por post
@@ -81,7 +82,7 @@ class AuthorController extends Controller
      * @param  \App\Author  $author
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Author $author)
+    public function update(AuthorStoreRequest $request, Author $author)
     {
         //
         $data=$request->all();

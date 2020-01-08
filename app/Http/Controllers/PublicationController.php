@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\PublicationStoreRequest;
 use App\Publication;
 use Illuminate\Http\Request;
 
@@ -34,7 +35,7 @@ class PublicationController extends Controller
      * @param  \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(PublicationStoreRequest $request)
     {
         //
         $data = $request->all(); //array com as informações q mandar por post
@@ -80,7 +81,7 @@ class PublicationController extends Controller
      * @param  \App\Publication $publication
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Publication $publication)
+    public function update(PublicationStoreRequest $request, Publication $publication)
     {
         //
         $data = $request->all();

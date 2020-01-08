@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\NewsTopicStoreRequest;
 use App\NewsTopic;
 use Illuminate\Http\Request;
 
@@ -34,7 +35,7 @@ class NewsTopicController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(NewsTopicStoreRequest $request)
     {
         //
         $data=$request->all(); //array com as informações q mandar por post
@@ -56,7 +57,7 @@ class NewsTopicController extends Controller
      * @param  \App\NewsTopic  $newsTopic
      * @return \Illuminate\Http\Response
      */
-    public function show(NewsTopic $newsTopic)
+    public function show(NewsTopicStoreRequest $newsTopic)
     {
         //
         return $newsTopic;

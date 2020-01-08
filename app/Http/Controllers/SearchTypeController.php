@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\SearchTypeStoreRequest;
 use App\SearchType;
 use Illuminate\Http\Request;
 
@@ -34,7 +35,7 @@ class SearchTypeController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(SearchTypeStoreRequest $request)
     {
         //
 
@@ -71,7 +72,7 @@ class SearchTypeController extends Controller
      * @param  \App\SearchType  $searchType
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, SearchType $searchType)
+    public function update(SearchTypeStoreRequest $request, SearchType $searchType)
     {
         //
         $data=$request->all();

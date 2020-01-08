@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\NewsSizeStoreRequest;
 use App\NewsSize;
 use Illuminate\Http\Request;
 
@@ -34,7 +35,7 @@ class NewsSizeController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(NewsSizeStoreRequest $request)
     {
         //
     }
@@ -69,7 +70,7 @@ class NewsSizeController extends Controller
      * @param  \App\NewsSize  $newsSize
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, NewsSize $newsSize)
+    public function update(NewsSizeStoreRequest $request, NewsSize $newsSize)
     {
         //
         $data=$request->all();

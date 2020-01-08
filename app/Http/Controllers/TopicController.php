@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\TopicStoreRequest;
 use App\Topic;
 use Illuminate\Http\Request;
 
@@ -34,7 +35,7 @@ class TopicController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(TopicStoreRequest $request)
     {
         //
         $data=$request->all(); //array com as informações q mandar por post
@@ -80,7 +81,7 @@ class TopicController extends Controller
      * @param  \App\Topic  $topic
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Topic $topic)
+    public function update(TopicStoreRequest $request, Topic $topic)
     {
         //
         $data=$request->all();
