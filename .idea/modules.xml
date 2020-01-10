@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/atenas.iml" filepath="$PROJECT_DIR$/.idea/atenas.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/laravel-base.iml" filepath="$PROJECT_DIR$/.idea/laravel-base.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/laravel-base.iml" filepath="$PROJECT_DIR$/.idea/laravel-base.iml" />
     </modules>
   </component>
 </project>
