@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\CategoryUser;
 use App\Http\Requests\CategoryUserStoreRequest;
+use App\Http\Requests\CategoryUserUpdateRequest;
 use Illuminate\Http\Request;
 
 class CategoryUserController extends Controller
@@ -16,7 +17,14 @@ class CategoryUserController extends Controller
     public function index()
     {
         //
-        return CategoryUser::all();
+        $categoriesusers = CategoryUser::all();
+        $response=[
+            'message'=>'Lista de Categorias Favoritas dos Users',
+            'data'=>$categoriesusers,
+            'result'=>'ok'
+        ];
+
+        return response($response);
     }
 
     /**
@@ -60,7 +68,13 @@ class CategoryUserController extends Controller
     public function show(CategoryUser $categoryUser)
     {
         //
-        return $categoryUser;
+        $response=[
+            'message'=>'Categoria Favorita do User selecionada',
+            'data'=>$categoryUser,
+            'result'=>'ok'
+        ];
+
+        return response($response);
     }
 
     /**
@@ -81,7 +95,7 @@ class CategoryUserController extends Controller
      * @param  \App\CategoryUser  $categoryUser
      * @return \Illuminate\Http\Response
      */
-    public function update(CategoryUserStoreRequest $request, CategoryUser $categoryUser)
+    public function update(CategoryUserUpdateRequest $request, CategoryUser $categoryUser)
     {
         //
         $data=$request->all();
@@ -108,6 +122,11 @@ class CategoryUserController extends Controller
     {
         //
         $categoryUser->delete();
-        return 'Relação entre Categoria e Utilizador Apagada';
+        $response=[
+            'message'=>'Relação entre Categoria e Utilizador Apagada',
+            'data'=>$categoryUser,
+            'result'=>'ok'
+        ];
+        return response($response);
     }
 }

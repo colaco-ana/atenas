@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Author;
 use App\Http\Requests\AuthorStoreRequest;
+use App\Http\Requests\AuthorUpdateRequest;
 use Illuminate\Http\Request;
 
 class AuthorController extends Controller
@@ -16,7 +17,14 @@ class AuthorController extends Controller
     public function index()
     {
         //
-        return Author::all();
+        $authors = Author::all();
+        $response=[
+            'message'=>'Lista de Autores',
+            'data'=>$authors,
+            'result'=>'ok'
+        ];
+
+        return response($response);
     }
 
     /**
@@ -60,7 +68,13 @@ class AuthorController extends Controller
     public function show(Author $author)
     {
         //
-        return $author;
+        $response=[
+            'message'=>'Autor selecionado',
+            'data'=>$author,
+            'result'=>'ok'
+        ];
+
+        return response($response);
     }
 
     /**
@@ -82,7 +96,7 @@ class AuthorController extends Controller
      * @param  \App\Author  $author
      * @return \Illuminate\Http\Response
      */
-    public function update(AuthorStoreRequest $request, Author $author)
+    public function update(AuthorUpdateRequest $request, Author $author)
     {
         //
         $data=$request->all();
@@ -108,6 +122,12 @@ class AuthorController extends Controller
     {
         //
         $author->delete();
-        return 'Autor Apagado';
+        $response=[
+            'message'=>'Autor Apagado',
+            'data'=>$author,
+            'result'=>'ok'
+        ];
+
+        return response($response);
     }
 }

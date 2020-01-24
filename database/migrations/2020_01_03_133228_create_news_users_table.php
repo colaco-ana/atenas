@@ -20,7 +20,6 @@ class CreateNewsUsersTable extends Migration
             $table->unique(['news_id', 'user_id']);
             $table->foreign('news_id')->references('id')->on('news')->onDelete('cascade');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
-            $table->string('flag');
             $table->timestamps();
             $table->softDeletes();
         });

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\TopicStoreRequest;
+use App\Http\Requests\TopicUpdateRequest;
 use App\Topic;
 use Illuminate\Http\Request;
 
@@ -16,7 +17,15 @@ class TopicController extends Controller
     public function index()
     {
         //
-        return Topic::all();
+        $topics = Topic::all();
+        $response=[
+            'message'=>'Lista de Tópicos',
+            'data'=>$topics,
+            'result'=>'ok'
+        ];
+
+        return response($response);
+
     }
 
     /**
@@ -60,7 +69,13 @@ class TopicController extends Controller
     public function show(Topic $topic)
     {
         //
-        return $topic;
+        $response=[
+            'message'=>'Tópico selecionado',
+            'data'=>$topic,
+            'result'=>'ok'
+        ];
+
+        return response($response);
     }
 
     /**
@@ -81,7 +96,7 @@ class TopicController extends Controller
      * @param  \App\Topic  $topic
      * @return \Illuminate\Http\Response
      */
-    public function update(TopicStoreRequest $request, Topic $topic)
+    public function update(TopicUpdateRequest $request, Topic $topic)
     {
         //
         $data=$request->all();
@@ -106,6 +121,12 @@ class TopicController extends Controller
     {
         //
         $topic->delete();
-        return 'Tópico Apagado';
+        $response=[
+            'message'=>'Tópico Apagado',
+            'data'=>$topic,
+            'result'=>'ok'
+        ];
+
+        return response($response);
     }
 }

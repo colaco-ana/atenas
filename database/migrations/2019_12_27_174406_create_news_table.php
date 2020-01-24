@@ -17,7 +17,7 @@ class CreateNewsTable extends Migration
             $table->bigIncrements('id');
             $table->string('title');
             $table->string('image');
-            $table->string('url');
+            $table->string('url')->unique();
             $table->string('subtitle');
             $table->bigInteger('news_size_id')->unsigned();
             $table->bigInteger('category_id')->unsigned();

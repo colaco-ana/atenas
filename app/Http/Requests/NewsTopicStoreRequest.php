@@ -35,8 +35,13 @@ class NewsTopicStoreRequest extends FormRequest
     public function messages()
     {
         return[
-            'news_id'=>'Associe uma notícia!',
-            'topic_id'=>'Associe um topico!'
+            'news_id.required'=>'Associe uma notícia!',
+            'news_id.exists'=>'Essa notícia não existe!',
+            'news_id.integer'=>'Associe uma notícia válida!',
+
+            'topic_id.required'=>'Associe um topico!',
+            'topic_id.exists'=>'Esse tópico não existe!',
+            'topic_id.integer'=>'Associe um topico válido!',
         ];
     }
 

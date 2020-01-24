@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <h1 class="h3 mb-2 text-gray-800">{{ $user->name }}</h1>
+    <h1 class="h3 mb-2 text-gray-800">{{ $user->username }}</h1>
 
     <div class="row">
         <div class="col-md-4">

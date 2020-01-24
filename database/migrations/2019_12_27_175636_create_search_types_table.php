@@ -15,7 +15,7 @@ class CreateSearchTypesTable extends Migration
     {
         Schema::create('search_types', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('type');
+            $table->string('type')->unique();
             $table->timestamps();
             $table->softDeletes();
         });

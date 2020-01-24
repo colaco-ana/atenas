@@ -11,7 +11,7 @@ class NewsUser extends Model
     use softDeletes;
 
     protected  $fillable = [
-        'news_id', 'user_id', 'flag'
+        'news_id', 'user_id', 'collection_id'
     ];
     /*
     public function new() {

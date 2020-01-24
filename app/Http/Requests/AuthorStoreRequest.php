@@ -28,9 +28,9 @@ class AuthorStoreRequest extends FormRequest
     {
         return [
             //
-            'name'=>'required|unique:authors|string|max:100',
+            'name'=>'required|unique:authors|string|max:70',
             'description'=>'required|string|max:255',
-            'email'=>'required|email|unique:authors,email',
+            'email' => 'required|string|email|max:50|unique:authors',
             'job_id'=>'required|exists:jobs,id|integer'
         ];
     }
@@ -38,10 +38,21 @@ class AuthorStoreRequest extends FormRequest
     public function messages()
     {
         return[
-            'name.required'=>'Insira um nome!',
-            'description.required'=>'Insira uma descrição do autor!',
-            'email.required'=>'Insira um endereço de email válido!',
-            'job_id'=>'Associe um trabalho!'
+            'name.required'=>'Insira um nome',
+            'name.unique'=>'Esse autor já existe',
+            'name.string'=>'Insira um nome válido',
+            'name.max'=>'Nome demasiado longo',
+            'description.required'=>'Insira uma descrição do autor',
+            'description.string'=>'Insira uma descrição válida',
+            'description.max'=>'Descrição demasiado longa',
+            'email.required'=>'Insira um endereço de email válido',
+            'email.string'=>'Insira um endereço de email válido',
+            'email.email'=>'Insira um endereço de email',
+            'email.max'=>'Endereço de email demasiado longo',
+            'email.unique'=>'O endereço de email inserido já se encontra registado',
+            'job_id.required'=>'Associe um trabalho',
+            'job_id.exists'=>'Esse trabalho não existe',
+            'job_id.integer'=>'Associe um trabalho válido'
         ];
     }
 

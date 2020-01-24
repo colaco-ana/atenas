@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\SearchStoreRequest;
+use App\Http\Requests\SearchUpdateRequest;
 use App\Search;
 use Illuminate\Http\Request;
 
@@ -16,7 +17,14 @@ class SearchController extends Controller
     public function index()
     {
         //
-        return Search::all();
+        $search=Search::all();
+        $response=[
+            'message'=>'Lista de Pesquisas',
+            'data'=>$search,
+            'result'=>'ok'
+        ];
+
+        return response($response);
     }
 
     /**
@@ -64,7 +72,13 @@ class SearchController extends Controller
     public function show(Search $search)
     {
         //
-        return $search;
+        $response=[
+            'message'=>'Autor selecionado',
+            'data'=>$search,
+            'result'=>'ok'
+        ];
+
+        return response($response);
     }
 
     /**
@@ -85,7 +99,7 @@ class SearchController extends Controller
      * @param  \App\Search  $search
      * @return \Illuminate\Http\Response
      */
-    public function update(SearchStoreRequest $request, Search $search)
+    public function update(SearchUpdateRequest $request, Search $search)
     {
         //
         $data=$request->all();
@@ -116,6 +130,12 @@ class SearchController extends Controller
     {
         //
         $search->delete();
-        return 'Pesquisa Apagada';
+        $response=[
+            'message'=>'Pesquisa Apagado',
+            'data'=>$search,
+            'result'=>'ok'
+        ];
+
+        return response($response);
     }
 }

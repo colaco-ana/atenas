@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\JobStoreRequest;
+use App\Http\Requests\JobUpdateRequest;
 use App\Job;
 use Illuminate\Http\Request;
 
@@ -16,7 +17,16 @@ class JobController extends Controller
     public function index()
     {
         //
-        return Job::all();
+       $jobs = Job::all();
+
+        $response=[
+            'message'=>'Lista de Profissoes
+            ',
+            'data'=>$jobs,
+            'result'=>'ok'
+        ];
+
+        return response($response);
     }
 
     /**
@@ -60,7 +70,13 @@ class JobController extends Controller
     public function show(Job $job)
     {
         //
-        return $job;
+        $response=[
+            'message'=>'Autor selecionado',
+            'data'=>$job,
+            'result'=>'ok'
+        ];
+
+        return response($response);
     }
 
     /**
@@ -81,11 +97,12 @@ class JobController extends Controller
      * @param  \App\Job  $job
      * @return \Illuminate\Http\Response
      */
-    public function update(JobStoreRequest $request, Job $job)
+    public function update(JobUpdateRequest $request, Job $job)
     {
         //
+        return $request;
         $data=$request->all();
-
+        
         $job->update($data);
 
         $response=[
@@ -106,6 +123,12 @@ class JobController extends Controller
     {
         //
         $job->delete();
-        return 'Profissão Apagada';
+        $response=[
+            'message'=>'Profissão Apagada',
+            'data'=>$job,
+            'result'=>'ok'
+        ];
+
+        return response($response);
     }
 }

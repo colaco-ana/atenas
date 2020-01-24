@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\PublicationStoreRequest;
+use App\Http\Requests\PublicationUpdateRequest;
 use App\Publication;
 use Illuminate\Http\Request;
 
@@ -16,7 +17,14 @@ class PublicationController extends Controller
     public function index()
     {
         //
-        return Publication::all();
+        $publications = Publication::all();
+        $response = [
+            'message' => 'Lista de publicações',
+            'data' => $publications,
+            'result' => 'ok'
+        ];
+
+        return response($response);
     }
 
     /**
@@ -60,7 +68,13 @@ class PublicationController extends Controller
     public function show(Publication $publication)
     {
         //
-        return $publication;
+        $response = [
+            'message' => 'Publicação selecionada',
+            'data' => $publication,
+            'result' => 'ok'
+        ];
+
+        return response($response);
     }
 
     /**
@@ -81,7 +95,7 @@ class PublicationController extends Controller
      * @param  \App\Publication $publication
      * @return \Illuminate\Http\Response
      */
-    public function update(PublicationStoreRequest $request, Publication $publication)
+    public function update(PublicationUpdateRequest $request, Publication $publication)
     {
         //
         $data = $request->all();
@@ -106,6 +120,11 @@ class PublicationController extends Controller
     {
         //
         $publication->delete();
-        return 'Publicação Apagada';
+        $response = [
+            'message' => 'Publicação Apagada',
+            'data' => $publication,
+            'result' => 'ok'
+        ];
+        return response($response);
     }
 }

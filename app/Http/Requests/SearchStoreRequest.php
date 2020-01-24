@@ -28,8 +28,8 @@ class SearchStoreRequest extends FormRequest
     {
         return [
             //
-            'text'=>'required|unique:searches|string|max:255',
-            'image'=>'required|image',
+            'text'=>'required|string|max:255',
+            'image'=>'image',
             'user_id'=>'required|exists:users,id|integer',
             'search_type_id'=>'required|exists:search_types,id|integer'
         ];
@@ -39,9 +39,18 @@ class SearchStoreRequest extends FormRequest
     {
         return[
             'text.required'=>'Insira um texto!',
-            'image.required'=>'Insira uma imagem válida!',
-            'user_id'=>'Associe um utilizador!',
-            'search_type_id'=>'Associe um tipo de pesquisa!',
+            'text.string'=>'Insira um texto válido!',
+            'text.max'=>'Texto inserido demasiado longo!',
+
+            'image.image'=>'O ficheiro inserido não é do tipo imagem!',
+
+            'user_id.required'=>'Associe um utilizador!',
+            'user_id.exists'=>'Utilizador associado não existe!',
+            'user_id.integer'=>'Associe um utilizador válido!',
+
+            'search_type_id.required'=>'Associe um tipo de pesquisa!',
+            'search_type_id.exists'=>'Tipo de pesquisa associado não existe!',
+            'search_type_id.integer'=>'Associe um tipo de pesquisa válido!',
         ];
     }
 

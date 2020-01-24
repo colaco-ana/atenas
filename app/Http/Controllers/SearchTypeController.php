@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\SearchTypeStoreRequest;
+use App\Http\Requests\SearchTypeUpdateRequest;
 use App\SearchType;
 use Illuminate\Http\Request;
 
@@ -16,7 +17,16 @@ class SearchTypeController extends Controller
     public function index()
     {
         //
-        return SearchType::all();
+
+
+        $searchType = SearchType::all();
+        $response=[
+            'message'=>'Lista de Tipos de Pesquisa',
+            'data'=>$searchType,
+            'result'=>'ok'
+        ];
+
+        return response($response);
     }
 
     /**
@@ -38,7 +48,17 @@ class SearchTypeController extends Controller
     public function store(SearchTypeStoreRequest $request)
     {
         //
+        $data=$request->all(); //array com as informações q mandar por post
 
+        $searchType=SearchType::create($data);
+
+        $response=[
+            'message'=>'Tipo de pesquisa Adicionado',
+            'data'=>$searchType,
+            'result'=>'ok'
+        ];
+
+        return response($response);
     }
 
     /**
@@ -50,7 +70,13 @@ class SearchTypeController extends Controller
     public function show(SearchType $searchType)
     {
         //
-        return $searchType;
+        $response=[
+            'message'=>'Tipo de pesquisa selecionada',
+            'data'=>$searchType,
+            'result'=>'ok'
+        ];
+
+        return response($response);
     }
 
     /**
@@ -62,7 +88,6 @@ class SearchTypeController extends Controller
     public function edit(SearchType $searchType)
     {
         //
-        return $searchType;
     }
 
     /**
@@ -72,7 +97,7 @@ class SearchTypeController extends Controller
      * @param  \App\SearchType  $searchType
      * @return \Illuminate\Http\Response
      */
-    public function update(SearchTypeStoreRequest $request, SearchType $searchType)
+    public function update(SearchTypeUpdateRequest $request, SearchType $searchType)
     {
         //
         $data=$request->all();
@@ -95,8 +120,13 @@ class SearchTypeController extends Controller
      */
     public function destroy(SearchType $searchType)
     {
-        /*
         $searchType->delete();
-        return 'deleted';*/
+        $response=[
+            'message'=>'Tipo de Pesquisa Apagado',
+            'data'=>$searchType,
+            'result'=>'ok'
+        ];
+
+        return response($response);
     }
 }

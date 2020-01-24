@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\NewsStoreRequest;
+use App\Http\Requests\NewsUpdateRequest;
 use App\News;
 use Illuminate\Http\Request;
 
@@ -16,7 +17,14 @@ class NewsController extends Controller
     public function index()
     {
         //
-        return News::all();
+        $news = News::all();
+        $response=[
+            'message'=>'Lista de Notícias',
+            'data'=>$news,
+            'result'=>'ok'
+        ];
+
+        return response($response);
     }
 
     /**
@@ -64,7 +72,13 @@ class NewsController extends Controller
     public function show(News $news)
     {
         //
-        return $news;
+        $response=[
+            'message'=>'Notícia selecionada',
+            'data'=>$news,
+            'result'=>'ok'
+        ];
+
+        return response($response);
     }
 
     /**
@@ -85,7 +99,7 @@ class NewsController extends Controller
      * @param  \App\News  $news
      * @return \Illuminate\Http\Response
      */
-    public function update(NewsStoreRequest $request, News $news)
+    public function update(NewsUpdateRequest $request, News $news)
     {
         //
         $data=$request->all();
@@ -116,6 +130,12 @@ class NewsController extends Controller
     {
         //
         $news->delete();
-        return 'Notícia Apagada';
+        $response=[
+            'message'=>'Notícia Apagada',
+            'data'=>$news,
+            'result'=>'ok'
+        ];
+
+        return response($response);
     }
 }

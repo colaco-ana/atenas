@@ -27,14 +27,17 @@ class NewsSizeStoreRequest extends FormRequest
     {
         return [
             //
-            'size'=>'required|string|max:100'
+            'size'=>'required|string|max:20|unique:news_sizes'
         ];
     }
 
     public function messages()
     {
         return[
+            'size.unique'=>'Esse tamanho de notícia já existe',
             'size.required'=>'Insira um tamanho de notícia!',
+            'size.string'=>'Insira um tamanho de notícia válido!',
+            'size.max'=>'Tamanho de notícia demasiado longo!'
         ];
     }
 

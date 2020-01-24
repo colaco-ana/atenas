@@ -35,8 +35,12 @@ class CategoryUserStoreRequest extends FormRequest
     public function messages()
     {
         return[
-            'category_id.required'=>'Associe uma categoria!',
-            'user_id.required'=>'Associe um utilizador!'
+            'category_id.required'=>'Associe uma categoria',
+            'category_id.exists'=>'Essa categoria não existe',
+            'category_id.integer'=>'Associe um categoria válida',
+            'user_id.required'=>'Associe um utilizador',
+            'user_id.exists'=>'Esse utilizador não existe',
+            'user_id.integer'=>'Associe um utilizador válido',
         ];
     }
 

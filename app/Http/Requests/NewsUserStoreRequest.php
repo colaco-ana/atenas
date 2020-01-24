@@ -29,16 +29,21 @@ class NewsUserStoreRequest extends FormRequest
             //
             'news_id'=>'required|exists:news,id|integer',
             'user_id'=>'required|exists:users,id|integer',
-            'flag'=>'required|string|max:100'
+            'collection_id'=>'exists:collections,id|integer'
         ];
     }
 
     public function messages()
     {
         return[
-            'flag.required'=>'Insira uma flag!',
-            'news_id'=>'Associe um notícia!',
-            'user_id'=>'Associe um utilizador!'
+            'news_id.required'=>'Associe um notícia',
+            'news_id.exists'=>'Essa notícia não existe',
+            'news_id.integer'=>'Associe um notícia válida',
+            'user_id.required'=>'Associe um utilizador',
+            'user_id.exists'=>'Esse utilizador não existe',
+            'user_id.integer'=>'Associe um utilizador válido',
+            'collection_id.exists'=>'Essa coleção não existe',
+            'collection_id.integer'=>'Associe uma coleção válida',
         ];
     }
 

@@ -15,7 +15,7 @@ class CreateNewsSizesTable extends Migration
     {
         Schema::create('news_sizes', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('size');
+            $table->string('size')->unique();
             $table->timestamps();
             $table->softDeletes();
         });

@@ -28,7 +28,7 @@ class JobStoreRequest extends FormRequest
     {
         return [
             //
-            'job'=>'required|unique:jobs|string|max:200'
+            'job'=>'required|unique:jobs|string|max:50'
         ];
     }
 
@@ -36,7 +36,10 @@ class JobStoreRequest extends FormRequest
     public function messages()
     {
         return[
-            'job.required'=>'Insira um tabalho!',
+            'job.required'=>'Insira uma profissão!',
+            'job.unique'=>'Essa profissão já existe!',
+            'job.string'=>'Insira uma profissão válida!',
+            'job.max'=>'Nome demasiado longo!',
         ];
     }
 

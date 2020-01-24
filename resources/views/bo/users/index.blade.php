@@ -38,7 +38,7 @@
                     <tbody>
                     @foreach($users as $user)
                         <tr @if($loop->index%2 == 0)class="bg-light"@endif>
-                            <td>{{ $user->name }}</td>
+                            <td>{{ $user->username }}</td>
                             <td>{{ $user->email }}</td>
                             <td>{{ $user->role->name }}</td>
                             <td>{{ $user->created_at }}</td>

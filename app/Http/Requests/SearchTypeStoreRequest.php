@@ -35,6 +35,9 @@ class SearchTypeStoreRequest extends FormRequest
     {
         return[
             'type.required'=>'Insira um tipo de pesquisa!',
+            'type.unique'=>'Esse tipo de pesquisa já existe!',
+            'type.string'=>'Insira um tipo de pesquisa válido!',
+            'type.max'=>'Tipo de pesquisa demasiado longo!',
         ];
     }
 

@@ -25,4 +25,7 @@ class News extends Model
     public function topics() {
         return $this->belongsToMany(Topic::class);
     }
+    public function collections() {
+        return $this->belongsToMany(Collection::class);
+    }
 }

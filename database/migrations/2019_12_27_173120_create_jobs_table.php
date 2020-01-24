@@ -15,7 +15,7 @@ class CreateJobsTable extends Migration
     {
         Schema::create('jobs', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('job');
+            $table->string('job')->unique();
             $table->timestamps();
             $table->softDeletes();
         });

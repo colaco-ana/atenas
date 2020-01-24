@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\AuthorUser;
 use App\Http\Requests\AuthorUserStoreRequest;
+use App\Http\Requests\AuthorUserUpdateRequest;
 use Illuminate\Http\Request;
 
 class AuthorUserController extends Controller
@@ -16,7 +17,14 @@ class AuthorUserController extends Controller
     public function index()
     {
         //
-        return AuthorUser::all();
+        $authorsusers = AuthorUser::all();
+        $response=[
+            'message'=>'Lista de Autor Favoritos dos Users',
+            'data'=>$authorsusers,
+            'result'=>'ok'
+        ];
+
+        return response($response);
     }
 
     /**
@@ -60,7 +68,13 @@ class AuthorUserController extends Controller
     public function show(AuthorUser $authorUser)
     {
         //
-        return $authorUser;
+        $response=[
+            'message'=>'Autor Favorito do User selecionado',
+            'data'=>$authorUser,
+            'result'=>'ok'
+        ];
+
+        return response($response);
     }
 
     /**
@@ -81,7 +95,7 @@ class AuthorUserController extends Controller
      * @param  \App\AuthorUser  $authorUser
      * @return \Illuminate\Http\Response
      */
-    public function update(AuthorUserStoreRequest $request, AuthorUser $authorUser)
+    public function update(AuthorUserUpdateRequest $request, AuthorUser $authorUser)
     {
         //
 
@@ -107,7 +121,13 @@ class AuthorUserController extends Controller
     {
         //
         $authorUser->delete();
-        return 'Autor Favorito do User Apagado';
+        $response=[
+            'message'=>'Autor Favorito do User Apagado',
+            'data'=>$authorUser,
+            'result'=>'ok'
+        ];
+
+        return response($response);
 
     }
 }

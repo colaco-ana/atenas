@@ -34,7 +34,10 @@ class PublicationStoreRequest extends FormRequest
     public function messages()
     {
         return[
-            'name.required'=>'Insira um nome de uma publicação!',
+            'name.required'=>'Insira um nome de uma publicação',
+            'name.unique'=>'Esse nome de publicação já existe',
+            'name.string'=>'Insira um nome de uma publicação válido',
+            'name.max'=>'Nome de publicação demasiado longo',
         ];
     }
 

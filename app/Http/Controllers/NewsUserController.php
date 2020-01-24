@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\NewsUserStoreRequest;
+use App\Http\Requests\NewsUserUpdateRequest;
 use App\NewsUser;
 use Illuminate\Http\Request;
 
@@ -16,7 +17,14 @@ class NewsUserController extends Controller
     public function index()
     {
         //
-        return NewsUser::all();
+        $newsusers = NewsUser::all();
+        $response=[
+            'message'=>'Lista de relações entre Notícias e Users',
+            'data'=>$newsusers,
+            'result'=>'ok'
+        ];
+
+        return response($response);
     }
 
     /**
@@ -61,6 +69,13 @@ class NewsUserController extends Controller
     {
         //
         return $newsUser;
+        $response=[
+            'message'=>'Relação entre Notícia e User selecionada',
+            'data'=>$newsUser,
+            'result'=>'ok'
+        ];
+
+        return response($response);
     }
 
     /**
@@ -81,7 +96,7 @@ class NewsUserController extends Controller
      * @param  \App\NewsUser  $newsUser
      * @return \Illuminate\Http\Response
      */
-    public function update(NewsUserStoreRequest $request, NewsUser $newsUser)
+    public function update(NewsUserUpdateRequest $request, NewsUser $newsUser)
     {
         //
         $data=$request->all();
@@ -107,6 +122,11 @@ class NewsUserController extends Controller
     {
         //
         $newsUser->delete();
-        return 'Relação entre Notícia e User Apagada';
+        $response=[
+            'message'=>'Relação entre Notícia e User Apagada',
+            'data'=>$newsUser,
+            'result'=>'ok'
+        ];
+        return response($response);
     }
 }

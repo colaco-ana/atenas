@@ -35,8 +35,12 @@ class AuthorUserStoreRequest extends FormRequest
     public function messages()
     {
         return[
-            'author_id'=>'Associe um autor!',
-            'user_id'=>'Associe um utilizador!'
+            'author_id.require'=>'Associe um autor',
+            'author_id.exists'=>'Esse autor não existe',
+            'author_id.integer'=>'Associe um autor válido',
+            'user_id.required'=>'Associe um utilizador',
+            'user_id.exists'=>'Esse utilizador não existe',
+            'user_id.integer'=>'Associe um utilizador válido',
         ];
     }
 

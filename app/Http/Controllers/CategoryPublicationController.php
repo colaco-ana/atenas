@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\CategoryPublication;
 use App\Http\Requests\CategoryPublicationStoreRequest;
+use App\Http\Requests\CategoryPublicationUpdateRequest;
 use Illuminate\Http\Request;
 
 class CategoryPublicationController extends Controller
@@ -16,7 +17,14 @@ class CategoryPublicationController extends Controller
     public function index()
     {
         //
-        return CategoryPublication::all();
+        $categoryPublications = CategoryPublication::all();
+        $response=[
+            'message'=>'Lista de ligações das categorias às publicações',
+            'data'=>$categoryPublications,
+            'result'=>'ok'
+        ];
+
+        return response($response);
     }
 
     /**
@@ -60,7 +68,13 @@ class CategoryPublicationController extends Controller
     public function show(CategoryPublication $categoryPublication)
     {
         //
-        return $categoryPublication;
+        $response=[
+            'message'=>'Ligação selecionada',
+            'data'=> $categoryPublication,
+            'result'=>'ok'
+        ];
+
+        return response($response);
     }
 
     /**
@@ -81,7 +95,7 @@ class CategoryPublicationController extends Controller
      * @param  \App\CategoryPublication  $categoryPublication
      * @return \Illuminate\Http\Response
      */
-    public function update(CategoryPublicationStoreRequest $request, CategoryPublication $categoryPublication)
+    public function update(CategoryPublicationUpdateRequest $request, CategoryPublication $categoryPublication)
     {
         //
         $data=$request->all();
@@ -108,6 +122,12 @@ class CategoryPublicationController extends Controller
     {
         //
         $categoryPublication->delete();
-        return 'Relação entre Categoria e Publicação Apagada';
+        $response=[
+            'message'=>'Relação entre Categoria e Publicação Apagada',
+            'data'=>$categoryPublication,
+            'result'=>'ok'
+        ];
+
+        return response($response);
     }
 }

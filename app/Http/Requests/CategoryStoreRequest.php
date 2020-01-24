@@ -26,7 +26,7 @@ class CategoryStoreRequest extends FormRequest
     public function rules()
     {
         return [
-            'category'=>'required|unique:categories|string|max:200',
+            'category'=>'required|unique:categories|string|max:50',
             'image'=>'required|image'
         ];
     }
@@ -34,8 +34,12 @@ class CategoryStoreRequest extends FormRequest
     public function messages()
     {
         return[
-            'category.required'=>'Insira uma Categoira!',
-            'image.required'=>'Insira uma imagem!'
+            'category.required'=>'Insira uma categoria',
+            'category.unique'=>'Essa categoria já existe',
+            'category.string'=>'Insira uma categoria válida',
+            'category.max'=>'Categoria demasiado longa',
+            'image.required'=>'Insira uma imagem',
+            'image.image'=>'Insira uma imagem válida'
         ];
     }
 

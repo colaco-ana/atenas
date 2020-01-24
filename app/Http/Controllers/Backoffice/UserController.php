@@ -9,6 +9,8 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rule;
+use App\Http\Requests\UserStoreRequest;
+use App\Http\Requests\UserUpdateRequest;
 
 class UserController extends Controller
 {
@@ -21,9 +23,15 @@ class UserController extends Controller
     {
         //
         $users = User::all();
+        $response=[
+            'message'=>'Lista de Users',
+            'data'=>$users,
+            'result'=>'ok'
+        ];
 
-        return view('bo.users.index')
-            ->with('users', $users);
+        return response($response);
+        /*return view('bo.users.index')
+            ->with('users', $users);*/
     }
 
     /**
@@ -34,10 +42,10 @@ class UserController extends Controller
     public function create()
     {
         //
-        $roles = Role::where('id', '>=', Auth::user()->role_id)->get();
-
-        return view('bo.users.create')
-            ->with('roles', $roles);
+        /*$roles = Role::where('id', '>=', Auth::user()->role_id)->get();
+        return $roles;*/
+        /*return view('bo.users.create')
+            ->with('roles', $roles);*/
     }
 
     /**
@@ -46,26 +54,39 @@ class UserController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(UserStoreRequest $request)
     {
 
-        $this->validate($request, [
-            'name' => 'required|string|max:255',
+        /*$this->validate($request, [
+            'username' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users',
             'password' => 'required|string|min:8|confirmed',
             'role_id' => 'required|integer|exists:roles,id|min:' . Auth::user()->role->id
-        ],
-            [
-                'role_id.min' => 'Cannot set selected role.'
-            ]);
+        ],*/
+            /*[
+                'role_id.min' => 'Cannot set selected role.',
+                'username.required' => 'Mete o nome',   
+            ]);*/
 
         $data = $request->all();
+
+        $file = $request->file('image')->store('images/users');
+        
+        $data['image'] = $file;
+                //return $data['image']. $file;
         $data['password'] = Hash::make($data['password']);
+        //return $data;
+        $user = User::create($data);
+        
+        $response=[
+            'message'=>'User Adicionado',
+            'data'=>$user,
+            'result'=>'ok'
+        ];
 
-        User::create($data);
-
-        return redirect()->route('user.index')
-            ->withErrors(['success' => 'User created.']);
+        return response($response);
+        /*return redirect()->route('user.index')
+            ->withErrors(['success' => 'User created.']);*/
     }
 
     /**
@@ -77,8 +98,15 @@ class UserController extends Controller
     public function show(User $user)
     {
         //
-        return view('bo.users.show')
-            ->with('user', $user);
+        $response=[
+            'message'=>'User selecionado',
+            'data'=>$user,
+            'result'=>'ok'
+        ];
+
+        return response($response);
+        /*return view('bo.users.show')
+            ->with('user', $user);*/
     }
 
     /**
@@ -92,6 +120,7 @@ class UserController extends Controller
         //
         $roles = Role::where('id', '>=', Auth::user()->role_id)->get();
 
+        //return $roles;
         return view('bo.users.edit')
             ->with('roles', $roles)
             ->with('user', $user);
@@ -104,31 +133,43 @@ class UserController extends Controller
      * @param  \App\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, User $user)
+    public function update(UserUpdateRequest $request, User $user)
     {
         //
-        $this->validate($request, [
-            'name' => 'required|string|max:255',
-            'email' => [
-                'required', 'string', 'email', 'max:255',
-                Rule::unique('users')->ignore($user->id),
-            ],
-            'password' => 'nullable|string|min:6|confirmed',
-            'role_id' => 'required|integer|exists:roles,id|min:' . Auth::user()->role->id,
-        ],
-            [
-                'role_id.min' => 'Cannot set selected role.'
-            ]);
+        //$this->validate($request, [
+          //  'username' => 'required|string|max:255',
+            //'email' => [
+              //  'required', 'string', 'email', 'max:255',
+               // Rule::unique('users')->ignore($user->id),
+            //],
+            //'password' => 'nullable|string|min:6|confirmed',
+            //'role_id' => 'required|integer|exists:roles,id|min:' . Auth::user()->role->id,
+        //],
+          //  [
+            //    'role_id.min' => 'Cannot set selected role.'
+            //]);
+        $data = $request->only('username', 'email', 'password', 'role_id','image');
+        if($request->hasFile('image')){
+            $file=$request->file('image')->store('images/users');
 
-        $data = $request->only('name', 'email', 'password', 'role_id');
-        if ($data['password'] != '')
+            $data['image']=$file;
+        }
+            
+        if ($request->hasFile('password'))
             $data['password'] = Hash::make($data['password']);
         else
             unset($data['password']);
 
         $user->update($data);
 
-        return back()->withErrors(['success' => 'User updated.']);
+        $response=[
+            'message'=>'User Editado',
+            'data'=>$user,
+            'result'=>'ok'
+        ];
+
+        return response($response);
+        //return back()->withErrors(['success' => 'User updated.']);
     }
 
     /**
@@ -141,7 +182,13 @@ class UserController extends Controller
     {
         //
         $user->delete();
+        $response=[
+            'message'=>'User Apagado',
+            'data'=>$user,
+            'result'=>'ok'
+        ];
 
-        return back()->withErrors(['success' => 'User blocked.']);
+        return response($response);
+        //return back()->withErrors(['success' => 'User blocked.']);
     }
 }

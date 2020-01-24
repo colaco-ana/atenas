@@ -35,6 +35,9 @@ class TopicStoreRequest extends FormRequest
     {
         return[
             'topic.required'=>'Insira um tópico!',
+            'topic.unique'=>'Tópico inserido já existe!',
+            'topic.string'=>'Insira um tópico válido!',
+            'topic.max'=>'Tópico inserido demasiado longo!',
         ];
     }
 

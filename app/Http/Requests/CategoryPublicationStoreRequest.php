@@ -37,7 +37,11 @@ class CategoryPublicationStoreRequest extends FormRequest
     {
         return[
             'category_id.required'=>'Associe uma categoria!',
-            'publication_id.required'=>'Associe uma publicação!'
+            'category_id.exists'=>'Essa categoria não existe',
+            'category_id.integer'=>'Associe um categoria válida',
+            'publication_id.required'=>'Associe uma publicação!',
+            'publication_id.exists'=>'Essa publicação não existe',
+            'publication_id.integer'=>'Associe um publicação válida',
         ];
     }
 

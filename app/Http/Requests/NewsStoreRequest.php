@@ -27,10 +27,10 @@ class NewsStoreRequest extends FormRequest
     {
         return [
             //
-            'title'=>'required|unique:news|string|max:200',
+            'title'=>'required|string|max:200',
             'image'=>'required|image',
             'url'=>'required|string|unique:news',
-            'subtitle'=>'required|unique:news|string|max:300',
+            'subtitle'=>'required|string|max:300',
             'news_size_id'=>'required|exists:news_sizes,id|integer',
             'category_id'=>'required|exists:categories,id|integer'
         ];
@@ -40,11 +40,27 @@ class NewsStoreRequest extends FormRequest
     {
         return[
             'title.required'=>'Insira um titulo!',
+            'title.string'=>'Insira um titulo válido!',
+            'title.max'=>'Título demasiado longo!',
+
             'image.required'=>'Insira uma imagem!',
-            'url.required'=>'Insira um url válido!',
-            'subtitle.required'=>'Insira um titulo!',
-            'news_size_id'=>'Associe um tamanho de notícia!',
-            'category_id'=>'Associe uma categoria de notícia!'
+            'image.image'=>'O ficheiro inserido não é do tipo imagem!',
+
+            'url.required'=>'Insira um url!',
+            'url.unique'=>'Esse url já existe!',
+            'url.string'=>'Insira um url válido!',
+
+            'subtitle.required'=>'Insira um subtítulo!',
+            'subtitle.string'=>'Insira um subtítulo válido!',
+            'subtitle.max'=>'Subtítulo demasiado longo!',
+
+            'news_size_id.required'=>'Associe um tamanho de notícia!',
+            'news_size_id.exists'=>'Esse tamanho de notícia não existe!',
+            'news_size_id.integer'=>'Associe um tamanho de notícia válido!',
+
+            'category_id.required'=>'Associe uma categoria de notícia!',
+            'category_id.exists'=>'Essa categoria não existe!',
+            'category_id.integer'=>'Associe uma categoria de notícia válido!'
 
         ];
     }

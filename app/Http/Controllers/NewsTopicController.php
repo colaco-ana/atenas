@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\NewsTopicStoreRequest;
+use App\Http\Requests\NewsTopicUpdateRequest;
 use App\NewsTopic;
 use Illuminate\Http\Request;
 
@@ -16,7 +17,14 @@ class NewsTopicController extends Controller
     public function index()
     {
         //
-        return NewsTopic::all();
+        $newsTopic = NewsTopic::all();
+        $response=[
+            'message'=>'Relações entre notícias e tópicos',
+            'data'=>$newsTopic,
+            'result'=>'ok'
+        ];
+
+        return response($response);
     }
 
     /**
@@ -60,7 +68,13 @@ class NewsTopicController extends Controller
     public function show(NewsTopicStoreRequest $newsTopic)
     {
         //
-        return $newsTopic;
+        $response=[
+            'message'=>'Relação entre Notícia e Tópico selecionado',
+            'data'=>$newsTopic,
+            'result'=>'ok'
+        ];
+
+        return response($response);
     }
 
     /**
@@ -81,7 +95,7 @@ class NewsTopicController extends Controller
      * @param  \App\NewsTopic  $newsTopic
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, NewsTopic $newsTopic)
+    public function update(NewsTopicUpdateRequest $request, NewsTopic $newsTopic)
     {
         //
         $data=$request->all();
@@ -106,7 +120,12 @@ class NewsTopicController extends Controller
     {
         //
         $newsTopic->delete();
-        return 'Relação entre Tópico e Noticia Apagada';
+        $response=[
+            'message'=>'Relação entre Tópico e Noticia Apagada',
+            'data'=>$newsTopic,
+            'result'=>'ok'
+        ];
 
+        return response($response);
     }
 }

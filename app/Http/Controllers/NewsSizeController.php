@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\NewsSizeStoreRequest;
+use App\Http\Requests\NewsSizeUpdateRequest;
 use App\NewsSize;
 use Illuminate\Http\Request;
 
@@ -16,7 +17,16 @@ class NewsSizeController extends Controller
     public function index()
     {
         //
-        return NewsSize::all();
+
+        $newsSize = NewsSize::all();
+
+        $response=[
+            'message'=>'Lista de Tamanho de Notícias',
+            'data'=>$newsSize,
+            'result'=>'ok'
+        ];
+
+        return response($response);
     }
 
     /**
@@ -38,6 +48,17 @@ class NewsSizeController extends Controller
     public function store(NewsSizeStoreRequest $request)
     {
         //
+        $data=$request->all(); //array com as informações q mandar por post
+
+        $newsSize=NewsSize::create($data);
+
+        $response=[
+            'message'=>'Tamanho de Notícia Adicionada',
+            'data'=>$newsSize,
+            'result'=>'ok'
+        ];
+
+        return response($response);
     }
 
     /**
@@ -49,7 +70,13 @@ class NewsSizeController extends Controller
     public function show(NewsSize $newsSize)
     {
         //
-        return $newsSize;
+        $response=[
+            'message'=>'Autor selecionado',
+            'data'=>$newsSize,
+            'result'=>'ok'
+        ];
+
+        return response($response);
     }
 
     /**
@@ -70,7 +97,7 @@ class NewsSizeController extends Controller
      * @param  \App\NewsSize  $newsSize
      * @return \Illuminate\Http\Response
      */
-    public function update(NewsSizeStoreRequest $request, NewsSize $newsSize)
+    public function update(NewsSizeUpdateRequest $request, NewsSize $newsSize)
     {
         //
         $data=$request->all();
@@ -93,8 +120,13 @@ class NewsSizeController extends Controller
      */
     public function destroy(NewsSize $newsSize)
     {
-        //
-        /*$newsSize->delete();
-        return 'deleted';*/
+        $newsSize->delete();
+        $response=[
+            'message'=>'Profissão Apagada',
+            'data'=>$newsSize,
+            'result'=>'ok'
+        ];
+
+        return response($response);
     }
 }
