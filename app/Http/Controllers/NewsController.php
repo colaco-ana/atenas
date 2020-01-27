@@ -7,10 +7,15 @@ use App\Http\Requests\NewsUpdateRequest;
 use App\News;
 use Illuminate\Http\Request;
 
+/**
+ * Class NewsController
+ * @package App\Http\Controllers
+ * @group News
+ */
 class NewsController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Display a listing of the news.
      *
      * @return \Illuminate\Http\Response
      */
@@ -38,7 +43,14 @@ class NewsController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Store a newly created news in storage.
+     *
+     * @bodyParam title string required News title
+     * @bodyParam image image required News image
+     * @bodyParam url string required News URL
+     * @bodyParam subtitle string required News subtitle
+     * @bodyParam news_size_id integer required News size id
+     * @bodyParam category_id integer required News cattegory id
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
@@ -64,7 +76,7 @@ class NewsController extends Controller
     }
 
     /**
-     * Display the specified resource.
+     * Display the specified news.
      *
      * @param  \App\News  $news
      * @return \Illuminate\Http\Response
@@ -93,7 +105,14 @@ class NewsController extends Controller
     }
 
     /**
-     * Update the specified resource in storage.
+     * Update the specified news in storage.
+     *
+     * @bodyParam title string News title
+     * @bodyParam image image News image
+     * @bodyParam url string News URL
+     * @bodyParam subtitle string News subtitle
+     * @bodyParam news_size_id integer News size id
+     * @bodyParam category_id integer News cattegory id
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  \App\News  $news
@@ -121,7 +140,7 @@ class NewsController extends Controller
     }
 
     /**
-     * Remove the specified resource from storage.
+     * Remove the specified news from storage.
      *
      * @param  \App\News  $news
      * @return \Illuminate\Http\Response

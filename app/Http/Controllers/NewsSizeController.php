@@ -7,10 +7,16 @@ use App\Http\Requests\NewsSizeUpdateRequest;
 use App\NewsSize;
 use Illuminate\Http\Request;
 
+/**
+ * Class NewsSizeController
+ * @package App\Http\Controllers
+ * @group News Size
+ */
+
 class NewsSizeController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Display a listing of the news size.
      *
      * @return \Illuminate\Http\Response
      */
@@ -40,7 +46,9 @@ class NewsSizeController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Store a newly created news size in storage.
+     *
+     * @bodyParam size string required News size
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
@@ -62,7 +70,7 @@ class NewsSizeController extends Controller
     }
 
     /**
-     * Display the specified resource.
+     * Display the specified news size.
      *
      * @param  \App\NewsSize  $newsSize
      * @return \Illuminate\Http\Response
@@ -91,7 +99,9 @@ class NewsSizeController extends Controller
     }
 
     /**
-     * Update the specified resource in storage.
+     * Update the specified news size in storage.
+     *
+     * @bodyParam size string News size
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  \App\NewsSize  $newsSize
@@ -113,7 +123,7 @@ class NewsSizeController extends Controller
     }
 
     /**
-     * Remove the specified resource from storage.
+     * Remove the specified news size from storage.
      *
      * @param  \App\NewsSize  $newsSize
      * @return \Illuminate\Http\Response

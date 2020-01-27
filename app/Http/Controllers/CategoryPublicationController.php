@@ -7,10 +7,16 @@ use App\Http\Requests\CategoryPublicationStoreRequest;
 use App\Http\Requests\CategoryPublicationUpdateRequest;
 use Illuminate\Http\Request;
 
+/**
+ * Class CategoryPublicationController
+ * @package App\Http\Controllers
+ * @group Category and Publication Relationship
+ */
+
 class CategoryPublicationController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Display a listing of the connections between categories and publications.
      *
      * @return \Illuminate\Http\Response
      */
@@ -38,7 +44,10 @@ class CategoryPublicationController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Store a newly created relationship between category and added publication in storage.
+     *
+     * @bodyParam category_id integer required Category id
+     * @bodyParam publication_id integer required Publication id
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
@@ -60,7 +69,7 @@ class CategoryPublicationController extends Controller
     }
 
     /**
-     * Display the specified resource.
+     * Display the specified connection between category and publication.
      *
      * @param  \App\CategoryPublication  $categoryPublication
      * @return \Illuminate\Http\Response
@@ -89,7 +98,10 @@ class CategoryPublicationController extends Controller
     }
 
     /**
-     * Update the specified resource in storage.
+     * Update the specified connection between category and publication in storage.
+     *
+     * @bodyParam category_id integer Category id
+     * @bodyParam publication_id integer Publication id
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  \App\CategoryPublication  $categoryPublication
@@ -113,7 +125,7 @@ class CategoryPublicationController extends Controller
     }
 
     /**
-     * Remove the specified resource from storage.
+     * Remove the specified connection between category and publication from storage.
      *
      * @param  \App\CategoryPublication  $categoryPublication
      * @return \Illuminate\Http\Response

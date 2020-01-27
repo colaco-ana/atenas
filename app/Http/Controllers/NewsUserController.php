@@ -7,10 +7,17 @@ use App\Http\Requests\NewsUserUpdateRequest;
 use App\NewsUser;
 use Illuminate\Http\Request;
 
+
+/**
+ * Class NewsUserController
+ * @package App\Http\Controllers
+ * @group News and User Relationship
+ */
+
 class NewsUserController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Display a listing of the connections between news and users.
      *
      * @return \Illuminate\Http\Response
      */
@@ -38,7 +45,11 @@ class NewsUserController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Store a newly created relationship between news and added user in storage.
+     *
+     * @bodyParam news_id integer required News id
+     * @bodyParam user_id integer required User id
+     * @bodyParam collection_id integer required Collection id
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
@@ -60,7 +71,7 @@ class NewsUserController extends Controller
     }
 
     /**
-     * Display the specified resource.
+     * Display the specified connection between news and user.
      *
      * @param  \App\NewsUser  $newsUser
      * @return \Illuminate\Http\Response
@@ -90,7 +101,11 @@ class NewsUserController extends Controller
     }
 
     /**
-     * Update the specified resource in storage.
+     * Update the specified connection between news and user in storage.
+     *
+     * @bodyParam news_id integer News id
+     * @bodyParam user_id integer User id
+     * @bodyParam collection_id integer Collection id
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  \App\NewsUser  $newsUser
@@ -113,7 +128,7 @@ class NewsUserController extends Controller
     }
 
     /**
-     * Remove the specified resource from storage.
+     * Remove the specified connection between news and user from storage.
      *
      * @param  \App\NewsUser  $newsUser
      * @return \Illuminate\Http\Response

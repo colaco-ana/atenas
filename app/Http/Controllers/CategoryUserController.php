@@ -7,10 +7,16 @@ use App\Http\Requests\CategoryUserStoreRequest;
 use App\Http\Requests\CategoryUserUpdateRequest;
 use Illuminate\Http\Request;
 
+/**
+ * Class CategoryUserStoreRequest
+ * @package App\Http\Requests
+ * @group Category and User Relationship
+ */
+
 class CategoryUserController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Display a listing of the users' favorite categories.
      *
      * @return \Illuminate\Http\Response
      */
@@ -38,7 +44,10 @@ class CategoryUserController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Store a newly created user favorite category in storage.
+     *
+     * @bodyParam category_id integer required Category id
+     * @bodyParam user_id integer required User id
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
@@ -60,7 +69,7 @@ class CategoryUserController extends Controller
     }
 
     /**
-     * Display the specified resource.
+     * Display the favorite category of the specified user.
      *
      * @param  \App\CategoryUser  $categoryUser
      * @return \Illuminate\Http\Response
@@ -89,7 +98,10 @@ class CategoryUserController extends Controller
     }
 
     /**
-     * Update the specified resource in storage.
+     * Update the user favorite category in storage.
+     *
+     * @bodyParam category_id integer Category id
+     * @bodyParam user_id integer User id
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  \App\CategoryUser  $categoryUser
@@ -113,7 +125,7 @@ class CategoryUserController extends Controller
     }
 
     /**
-     * Remove the specified resource from storage.
+     * Remove the specified user favorite category from storage.
      *
      * @param  \App\CategoryUser  $categoryUser
      * @return \Illuminate\Http\Response

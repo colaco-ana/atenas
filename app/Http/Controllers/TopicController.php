@@ -7,10 +7,16 @@ use App\Http\Requests\TopicUpdateRequest;
 use App\Topic;
 use Illuminate\Http\Request;
 
+/**
+ * Class TopicController
+ * @package App\Http\Controllers
+ * @group Topic
+ */
+
 class TopicController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Display a listing of the topics.
      *
      * @return \Illuminate\Http\Response
      */
@@ -39,7 +45,9 @@ class TopicController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Store a newly created topic in storage.
+     *
+     * @bodyParam topic string required Topic name
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
@@ -61,7 +69,7 @@ class TopicController extends Controller
     }
 
     /**
-     * Display the specified resource.
+     * Display the specified topic.
      *
      * @param  \App\Topic  $topic
      * @return \Illuminate\Http\Response
@@ -90,7 +98,9 @@ class TopicController extends Controller
     }
 
     /**
-     * Update the specified resource in storage.
+     * Update the specified topic in storage.
+     *
+     * @bodyParam topic string Topic name
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  \App\Topic  $topic
@@ -112,7 +122,7 @@ class TopicController extends Controller
     }
 
     /**
-     * Remove the specified resource from storage.
+     * Remove the specified topic from storage.
      *
      * @param  \App\Topic  $topic
      * @return \Illuminate\Http\Response

@@ -12,10 +12,16 @@ use Illuminate\Validation\Rule;
 use App\Http\Requests\UserStoreRequest;
 use App\Http\Requests\UserUpdateRequest;
 
+/**
+ * Class UserController
+ * @package App\Http\Controllers\Backoffice
+ * @group User
+ */
+
 class UserController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Display a listing of the users.
      *
      * @return \Illuminate\Http\Response
      */
@@ -35,7 +41,7 @@ class UserController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
+     * Show the form for creating a resource.
      *
      * @return \Illuminate\Http\Response
      */
@@ -49,7 +55,14 @@ class UserController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Store a newly created user in storage.
+     *
+     * @bodyParam username string required Username
+     * @bodyParam email string required E-mail
+     * @bodyParam password string required Password
+     * @bodyParam image image Image
+     * @bodyParam role_id integer required Role id
+     * @bodyParam news_size_id integer required News size id
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
@@ -90,7 +103,7 @@ class UserController extends Controller
     }
 
     /**
-     * Display the specified resource.
+     * Display the specified user.
      *
      * @param  \App\User  $user
      * @return \Illuminate\Http\Response
@@ -110,7 +123,7 @@ class UserController extends Controller
     }
 
     /**
-     * Show the form for editing the specified resource.
+     * Show the form for editing the specified user.
      *
      * @param  \App\User  $user
      * @return \Illuminate\Http\Response
@@ -127,7 +140,14 @@ class UserController extends Controller
     }
 
     /**
-     * Update the specified resource in storage.
+     * Update the specified user in storage.
+     *
+     * @bodyParam username string Username
+     * @bodyParam email string E-mail
+     * @bodyParam password string Password
+     * @bodyParam image image Image
+     * @bodyParam role_id integer Role id
+     * @bodyParam news_size_id integer News size id
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  \App\User  $user
@@ -173,7 +193,7 @@ class UserController extends Controller
     }
 
     /**
-     * Remove the specified resource from storage.
+     * Remove the specified user from storage.
      *
      * @param  \App\User  $user
      * @return \Illuminate\Http\Response

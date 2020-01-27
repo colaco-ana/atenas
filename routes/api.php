@@ -26,7 +26,7 @@ Route::resource('publication','PublicationController');
 Route::resource('search','SearchController');
 Route::resource('searchType','SearchTypeController');
 Route::resource('topic','TopicController');
-Route::resource('user','Backoffice\UserController');
+Route::resource('users','Backoffice\UserController');
 Route::resource('collection','CollectionController');
 Route::group(['middleware' => 'auth:api'], function(){
     //Route::resource('author','AuthorController');

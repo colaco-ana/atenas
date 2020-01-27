@@ -7,10 +7,16 @@ use App\Http\Requests\NewsTopicUpdateRequest;
 use App\NewsTopic;
 use Illuminate\Http\Request;
 
+/**
+ * Class NewsTopicController
+ * @package App\Http\Controllers
+ * @group News Topic
+ */
+
 class NewsTopicController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Display a listing of the news topics.
      *
      * @return \Illuminate\Http\Response
      */
@@ -38,7 +44,10 @@ class NewsTopicController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Store a newly created news topic in storage.
+     *
+     * @bodyParam news_id integer required News id
+     * @bodyParam topic_id integer required Topic id
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
@@ -60,7 +69,7 @@ class NewsTopicController extends Controller
     }
 
     /**
-     * Display the specified resource.
+     * Display the specified topic.
      *
      * @param  \App\NewsTopic  $newsTopic
      * @return \Illuminate\Http\Response
@@ -80,6 +89,9 @@ class NewsTopicController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
+     * @bodyParam news_id integer required News id
+     * @bodyParam topic_id integer required Topic id
+     *
      * @param  \App\NewsTopic  $newsTopic
      * @return \Illuminate\Http\Response
      */
@@ -89,7 +101,10 @@ class NewsTopicController extends Controller
     }
 
     /**
-     * Update the specified resource in storage.
+     * Update the specified topic in storage.
+     *
+     * @bodyParam news_id integer News id
+     * @bodyParam topic_id integer Topic id
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  \App\NewsTopic  $newsTopic
@@ -111,7 +126,7 @@ class NewsTopicController extends Controller
     }
 
     /**
-     * Remove the specified resource from storage.
+     * Remove the specified topic from storage.
      *
      * @param  \App\NewsTopic  $newsTopic
      * @return \Illuminate\Http\Response

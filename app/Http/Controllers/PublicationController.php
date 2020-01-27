@@ -7,10 +7,16 @@ use App\Http\Requests\PublicationUpdateRequest;
 use App\Publication;
 use Illuminate\Http\Request;
 
+/**
+ * Class PublicationController
+ * @package App\Http\Controllers
+ * @group Publication
+ */
+
 class PublicationController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Display a listing of the publications.
      *
      * @return \Illuminate\Http\Response
      */
@@ -38,7 +44,9 @@ class PublicationController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Store a newly created publication in storage.
+     *
+     * @bodyParam name string required Publication Name
      *
      * @param  \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
@@ -60,7 +68,7 @@ class PublicationController extends Controller
     }
 
     /**
-     * Display the specified resource.
+     * Display the specified publication.
      *
      * @param  \App\Publication $publication
      * @return \Illuminate\Http\Response
@@ -89,7 +97,9 @@ class PublicationController extends Controller
     }
 
     /**
-     * Update the specified resource in storage.
+     * Update the specified publication in storage.
+     *
+     * @bodyParam name string Publication Name
      *
      * @param  \Illuminate\Http\Request $request
      * @param  \App\Publication $publication
@@ -111,7 +121,7 @@ class PublicationController extends Controller
     }
 
     /**
-     * Remove the specified resource from storage.
+     * Remove the specified publication from storage.
      *
      * @param  \App\Publication $publication
      * @return \Illuminate\Http\Response

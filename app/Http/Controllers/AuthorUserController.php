@@ -7,13 +7,21 @@ use App\Http\Requests\AuthorUserStoreRequest;
 use App\Http\Requests\AuthorUserUpdateRequest;
 use Illuminate\Http\Request;
 
+/**
+ * Class AuthorUpdateRequest
+ * @package App\Http\Requests
+ *
+ * @group Author and User Relationship
+ */
+
 class AuthorUserController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Display a listing of the users' favorite authors.
      *
      * @return \Illuminate\Http\Response
      */
+
     public function index()
     {
         //
@@ -38,7 +46,10 @@ class AuthorUserController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Store a newly created user favorite author in storage.
+     *
+     * @bodyParam author_id integer required Author id
+     * @bodyParam user_id integer required User id
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
@@ -60,7 +71,7 @@ class AuthorUserController extends Controller
     }
 
     /**
-     * Display the specified resource.
+     * Display the favorite author of the specified user.
      *
      * @param  \App\AuthorUser  $authorUser
      * @return \Illuminate\Http\Response
@@ -89,7 +100,10 @@ class AuthorUserController extends Controller
     }
 
     /**
-     * Update the specified resource in storage.
+     * Update the user favorite author in storage.
+     *
+     * @bodyParam author_id integer Author id
+     * @bodyParam user_id integer User id
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  \App\AuthorUser  $authorUser
@@ -112,7 +126,7 @@ class AuthorUserController extends Controller
     }
 
     /**
-     * Remove the specified resource from storage.
+     * Remove the specified user favorite author from storage.
      *
      * @param  \App\AuthorUser  $authorUser
      * @return \Illuminate\Http\Response

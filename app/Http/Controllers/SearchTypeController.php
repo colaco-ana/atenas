@@ -7,10 +7,16 @@ use App\Http\Requests\SearchTypeUpdateRequest;
 use App\SearchType;
 use Illuminate\Http\Request;
 
+/**
+ * Class SearchTypeController
+ * @package App\Http\Controllers
+ * @group Search Type
+ */
+
 class SearchTypeController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Display a listing of the search types.
      *
      * @return \Illuminate\Http\Response
      */
@@ -40,7 +46,9 @@ class SearchTypeController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Store a newly created search type in storage.
+     *
+     * @bodyParam type string required Type of search
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
@@ -62,7 +70,7 @@ class SearchTypeController extends Controller
     }
 
     /**
-     * Display the specified resource.
+     * Display the specified search type.
      *
      * @param  \App\SearchType  $searchType
      * @return \Illuminate\Http\Response
@@ -91,7 +99,9 @@ class SearchTypeController extends Controller
     }
 
     /**
-     * Update the specified resource in storage.
+     * Update the specified search type in storage.
+     *
+     * @bodyParam type string Type of search
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  \App\SearchType  $searchType
@@ -113,7 +123,7 @@ class SearchTypeController extends Controller
     }
 
     /**
-     * Remove the specified resource from storage.
+     * Remove the specified search type from storage.
      *
      * @param  \App\SearchType  $searchType
      * @return \Illuminate\Http\Response

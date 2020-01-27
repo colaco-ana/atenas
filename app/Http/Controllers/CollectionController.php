@@ -7,10 +7,16 @@ use App\Http\Requests\CollectionStoreRequest;
 use App\Http\Requests\CollectionUpdateRequest;
 use Illuminate\Http\Request;
 
+/**
+ * Class CollectionController
+ * @package App\Http\Controllers
+ * @group Collection
+ */
+
 class CollectionController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Display a listing of the collections.
      *
      * @return \Illuminate\Http\Response
      */
@@ -38,7 +44,10 @@ class CollectionController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Store a newly created collection in storage.
+     *
+     * @bodyParam collection string required Collection Name
+     * @bodyParam user_id integer required User id
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
@@ -61,7 +70,7 @@ class CollectionController extends Controller
     }
 
     /**
-     * Display the specified resource.
+     * Display the specified collection.
      *
      * @param  \App\Collection  $collection
      * @return \Illuminate\Http\Response
@@ -79,7 +88,10 @@ class CollectionController extends Controller
     }
 
     /**
-     * Show the form for editing the specified resource.
+     * Show the form for editing the specified collection.
+     *
+     * @bodyParam collection string required Collection Name
+     * @bodyParam user_id integer required User id
      *
      * @param  \App\Collection  $collection
      * @return \Illuminate\Http\Response
@@ -90,7 +102,10 @@ class CollectionController extends Controller
     }
 
     /**
-     * Update the specified resource in storage.
+     * Update the specified collection in storage.
+     *
+     * @bodyParam collection string Collection Name
+     * @bodyParam user_id integer User id
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  \App\Collection  $collection
@@ -112,7 +127,7 @@ class CollectionController extends Controller
     }
 
     /**
-     * Remove the specified resource from storage.
+     * Remove the specified collection from storage.
      *
      * @param  \App\Collection  $collection
      * @return \Illuminate\Http\Response

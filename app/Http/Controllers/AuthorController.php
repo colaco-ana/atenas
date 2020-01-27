@@ -7,10 +7,17 @@ use App\Http\Requests\AuthorStoreRequest;
 use App\Http\Requests\AuthorUpdateRequest;
 use Illuminate\Http\Request;
 
+/**
+ * Class AuthorController
+ * @package App\Http\Controllers
+ *
+ * @group Author
+ */
+
 class AuthorController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Display a listing of the authors.
      *
      * @return \Illuminate\Http\Response
      */
@@ -38,7 +45,12 @@ class AuthorController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Store a newly created author in storage.
+     *
+     * @bodyParam name string required Author's name
+     * @bodyParam description string required Author's description
+     * @bodyParam email string required Author's e-mail
+     * @bodyParam job_id integer required Author's job
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
@@ -60,7 +72,7 @@ class AuthorController extends Controller
     }
 
     /**
-     * Display the specified resource.
+     * Display the specified author.
      *
      * @param  \App\Author  $author
      * @return \Illuminate\Http\Response
@@ -90,7 +102,12 @@ class AuthorController extends Controller
     }
 
     /**
-     * Update the specified resource in storage.
+     * Update the specified author in storage.
+     *
+     * @bodyParam name string Author's name
+     * @bodyParam description string Author's description
+     * @bodyParam email string Author's e-mail
+     * @bodyParam job_id integer Author's profession
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  \App\Author  $author
@@ -113,7 +130,7 @@ class AuthorController extends Controller
     }
 
     /**
-     * Remove the specified resource from storage.
+     * Remove the specified author from storage.
      *
      * @param  \App\Author  $author
      * @return \Illuminate\Http\Response

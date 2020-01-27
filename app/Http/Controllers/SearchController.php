@@ -7,10 +7,16 @@ use App\Http\Requests\SearchUpdateRequest;
 use App\Search;
 use Illuminate\Http\Request;
 
+/**
+ * Class SearchController
+ * @package App\Http\Controllers
+ * @group Search
+ */
+
 class SearchController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Display a listing of the search.
      *
      * @return \Illuminate\Http\Response
      */
@@ -38,7 +44,12 @@ class SearchController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Store a newly created search in storage.
+     *
+     * @bodyParam text string required Search text
+     * @bodyParam image image Search image
+     * @bodyParam user_id integer required User id
+     * @bodyParam search_type_id integer required Type of Search
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
@@ -64,7 +75,7 @@ class SearchController extends Controller
     }
 
     /**
-     * Display the specified resource.
+     * Display the specified search.
      *
      * @param  \App\Search  $search
      * @return \Illuminate\Http\Response
@@ -93,7 +104,12 @@ class SearchController extends Controller
     }
 
     /**
-     * Update the specified resource in storage.
+     * Update the specified search in storage.
+     *
+     * @bodyParam text string Search text
+     * @bodyParam image image Search image
+     * @bodyParam user_id integer User id
+     * @bodyParam search_type_id integer Type of Search
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  \App\Search  $search
@@ -121,7 +137,7 @@ class SearchController extends Controller
     }
 
     /**
-     * Remove the specified resource from storage.
+     * Remove the specified search from storage.
      *
      * @param  \App\Search  $search
      * @return \Illuminate\Http\Response

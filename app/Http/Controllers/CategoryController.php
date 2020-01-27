@@ -7,10 +7,17 @@ use App\Http\Requests\CategoryStoreRequest;
 use App\Http\Requests\CategoryUpdateRequest;
 use Illuminate\Http\Request;
 
+/**
+ * Class CategoryController
+ * @package App\Http\Controllers
+ *
+ * @group Category
+ */
+
 class CategoryController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Display a listing of the category.
      *
      * @return \Illuminate\Http\Response
      */
@@ -38,7 +45,10 @@ class CategoryController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Store a newly created category in storage.
+     *
+     * @bodyParam category string required Category name
+     * @bodyParam image image required Category image
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
@@ -64,7 +74,7 @@ class CategoryController extends Controller
     }
 
     /**
-     * Display the specified resource.
+     * Display the specified category.
      *
      * @param  \App\Category  $category
      * @return \Illuminate\Http\Response
@@ -93,7 +103,10 @@ class CategoryController extends Controller
     }
 
     /**
-     * Update the specified resource in storage.
+     * Update the specified category in storage.
+     *
+     * @bodyParam category string Category name
+     * @bodyParam image image Category image
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  \App\Category  $category
@@ -120,6 +133,13 @@ class CategoryController extends Controller
         ];
         return response($response);
     }
+
+    /**
+     * Remove the specified category from storage.
+     *
+     * @param  \App\Author  $author
+     * @return \Illuminate\Http\Response
+     */
 
     public function destroy(Category $category)
     {

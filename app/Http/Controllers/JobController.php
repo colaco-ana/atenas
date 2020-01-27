@@ -7,10 +7,16 @@ use App\Http\Requests\JobUpdateRequest;
 use App\Job;
 use Illuminate\Http\Request;
 
+/**
+ * Class JobController
+ * @package App\Http\Controllers
+ * @group Job
+ */
+
 class JobController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Display a listing of the jobs.
      *
      * @return \Illuminate\Http\Response
      */
@@ -40,7 +46,9 @@ class JobController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Store a newly created job in storage.
+     *
+     * @bodyParam job string required Job name
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
@@ -62,7 +70,7 @@ class JobController extends Controller
     }
 
     /**
-     * Display the specified resource.
+     * Display the specified job.
      *
      * @param  \App\Job  $job
      * @return \Illuminate\Http\Response
@@ -91,7 +99,9 @@ class JobController extends Controller
     }
 
     /**
-     * Update the specified resource in storage.
+     * Update the specified job in storage.
+     *
+     * @bodyParam job string Job name
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  \App\Job  $job
@@ -114,7 +124,7 @@ class JobController extends Controller
     }
 
     /**
-     * Remove the specified resource from storage.
+     * Remove the specified job from storage.
      *
      * @param  \App\Job  $job
      * @return \Illuminate\Http\Response
