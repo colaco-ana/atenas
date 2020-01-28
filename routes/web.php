@@ -19,16 +19,16 @@ Route::get('/', 'MainController@index')->name('index');
 /**
  *  Auth & Registration
  */
-//Auth::routes();
+Auth::routes();
 
 /**
  * Authenticated only Routes
  */
-//Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', 'HomeController@index')->name('home');
 
 /**
  * Backoffice Routes
- *//*
+ */
 Route::group(['prefix' => 'admin', 'namespace' => 'Backoffice', 'middleware' => ['auth', 'role:admin|manager']],
     function()
     {
@@ -38,9 +38,10 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Backoffice', 'middleware' => 
     }
 );
 Auth::routes();
-*/
-//Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/home', function () {
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/', function () {
     return view('app');
 });
 

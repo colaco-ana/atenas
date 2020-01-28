@@ -54,124 +54,11 @@ fetch(url, {
 ```
 
 
-> Example response (200):
+> Example response (429):
 
 ```json
 {
-    "message": "Lista de Autores",
-    "data": [
-        {
-            "id": 1,
-            "name": "Célia Rodrigues",
-            "description": "Parte da equipa de Infogafia do Público.",
-            "email": "celia.rodrigues@publico.pt",
-            "job_id": 19,
-            "created_at": "2020-01-27 11:12:23",
-            "updated_at": "2020-01-27 11:12:23",
-            "deleted_at": null
-        },
-        {
-            "id": 2,
-            "name": "Andrea Espadinha",
-            "description": "Designer do Público há 5 anos.",
-            "email": "andrea.Espadinha@publico.pt",
-            "job_id": 11,
-            "created_at": "2020-01-27 11:12:23",
-            "updated_at": "2020-01-27 11:12:23",
-            "deleted_at": null
-        },
-        {
-            "id": 3,
-            "name": "Amílcar Correia",
-            "description": "Director Adjunto, responsável pelo online do PÚBLICO.",
-            "email": "acorreia@publico.pt",
-            "job_id": 5,
-            "created_at": "2020-01-27 11:12:23",
-            "updated_at": "2020-01-27 11:12:23",
-            "deleted_at": null
-        },
-        {
-            "id": 4,
-            "name": "Vítor Ferreira",
-            "description": "Jornalistas do Público.",
-            "email": "voferreira@publico.pt",
-            "job_id": 1,
-            "created_at": "2020-01-27 11:12:23",
-            "updated_at": "2020-01-27 11:12:23",
-            "deleted_at": null
-        },
-        {
-            "id": 5,
-            "name": "Leonete Botelho",
-            "description": "Jornalistas do Público.",
-            "email": "lbotelho@publico.pt",
-            "job_id": 1,
-            "created_at": "2020-01-27 11:12:24",
-            "updated_at": "2020-01-27 11:12:24",
-            "deleted_at": null
-        },
-        {
-            "id": 6,
-            "name": "Patrícia Carvalho",
-            "description": "Jornalistas do Público.",
-            "email": "patricia.carvalho@publico.pt",
-            "job_id": 1,
-            "created_at": "2020-01-27 11:12:24",
-            "updated_at": "2020-01-27 11:12:24",
-            "deleted_at": null
-        },
-        {
-            "id": 7,
-            "name": "Clara Barata",
-            "description": "Faz parte da equipa do Público como Sub-Editora da categoria Mundo.",
-            "email": "clara.barata@publico.pt",
-            "job_id": 18,
-            "created_at": "2020-01-27 11:12:24",
-            "updated_at": "2020-01-27 11:12:24",
-            "deleted_at": null
-        },
-        {
-            "id": 8,
-            "name": "Álvaro Domingues",
-            "description": "Professor da Faculdade de Arquitetura da Universidade do Porto.",
-            "email": "alvaro.domingues@publico.pt",
-            "job_id": 3,
-            "created_at": "2020-01-27 11:12:24",
-            "updated_at": "2020-01-27 11:12:24",
-            "deleted_at": null
-        },
-        {
-            "id": 9,
-            "name": "Sofia Neves",
-            "description": "Jornalistas do Público.",
-            "email": "sofia.neves@publico.pt",
-            "job_id": 1,
-            "created_at": "2020-01-27 11:12:24",
-            "updated_at": "2020-01-27 11:12:24",
-            "deleted_at": null
-        },
-        {
-            "id": 10,
-            "name": "Filipe Ribeiro",
-            "description": "Designer Digital do Público.",
-            "email": "filipe.ribeiro@publico.pt",
-            "job_id": 20,
-            "created_at": "2020-01-27 11:12:24",
-            "updated_at": "2020-01-27 11:12:24",
-            "deleted_at": null
-        },
-        {
-            "id": 11,
-            "name": "Miguel Esteves Cardoso",
-            "description": "Colunista do Público.",
-            "email": "opiniao@publico.pt",
-            "job_id": 15,
-            "created_at": "2020-01-27 11:12:24",
-            "updated_at": "2020-01-27 11:12:24",
-            "deleted_at": null
-        }
-    ],
-    "result": "ok"
+    "message": "Too Many Attempts."
 }
 ```
 
@@ -212,6 +99,13 @@ fetch(url, {
 ```
 
 
+> Example response (429):
+
+```json
+{
+    "message": "Too Many Attempts."
+}
+```
 
 ### HTTP Request
 `GET api/author/create`
@@ -229,7 +123,7 @@ curl -X POST \
     "http://localhost/api/author" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"name":"qui","description":"reprehenderit","email":"sit","job_id":16}'
+    -d '{"name":"ipsam","description":"modi","email":"sunt","job_id":14}'
 
 ```
 
@@ -244,10 +138,10 @@ let headers = {
 };
 
 let body = {
-    "name": "qui",
-    "description": "reprehenderit",
-    "email": "sit",
-    "job_id": 16
+    "name": "ipsam",
+    "description": "modi",
+    "email": "sunt",
+    "job_id": 14
 }
 
 fetch(url, {
@@ -305,22 +199,11 @@ fetch(url, {
 ```
 
 
-> Example response (200):
+> Example response (429):
 
 ```json
 {
-    "message": "Autor selecionado",
-    "data": {
-        "id": 1,
-        "name": "Célia Rodrigues",
-        "description": "Parte da equipa de Infogafia do Público.",
-        "email": "celia.rodrigues@publico.pt",
-        "job_id": 19,
-        "created_at": "2020-01-27 11:12:23",
-        "updated_at": "2020-01-27 11:12:23",
-        "deleted_at": null
-    },
-    "result": "ok"
+    "message": "Too Many Attempts."
 }
 ```
 
@@ -361,6 +244,13 @@ fetch(url, {
 ```
 
 
+> Example response (429):
+
+```json
+{
+    "message": "Too Many Attempts."
+}
+```
 
 ### HTTP Request
 `GET api/author/{author}/edit`
@@ -378,7 +268,7 @@ curl -X PUT \
     "http://localhost/api/author/1" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"name":"numquam","description":"explicabo","email":"autem","job_id":1}'
+    -d '{"name":"aut","description":"unde","email":"corrupti","job_id":12}'
 
 ```
 
@@ -393,10 +283,10 @@ let headers = {
 };
 
 let body = {
-    "name": "numquam",
-    "description": "explicabo",
-    "email": "autem",
-    "job_id": 1
+    "name": "aut",
+    "description": "unde",
+    "email": "corrupti",
+    "job_id": 12
 }
 
 fetch(url, {
@@ -497,54 +387,11 @@ fetch(url, {
 ```
 
 
-> Example response (200):
+> Example response (429):
 
 ```json
 {
-    "message": "Lista de Autor Favoritos dos Users",
-    "data": [
-        {
-            "id": 1,
-            "author_id": 11,
-            "user_id": 5,
-            "created_at": "2020-01-27 11:12:37",
-            "updated_at": "2020-01-27 11:12:37",
-            "deleted_at": null
-        },
-        {
-            "id": 2,
-            "author_id": 4,
-            "user_id": 6,
-            "created_at": "2020-01-27 11:12:37",
-            "updated_at": "2020-01-27 11:12:37",
-            "deleted_at": null
-        },
-        {
-            "id": 3,
-            "author_id": 5,
-            "user_id": 7,
-            "created_at": "2020-01-27 11:12:37",
-            "updated_at": "2020-01-27 11:12:37",
-            "deleted_at": null
-        },
-        {
-            "id": 4,
-            "author_id": 6,
-            "user_id": 4,
-            "created_at": "2020-01-27 11:12:38",
-            "updated_at": "2020-01-27 11:12:38",
-            "deleted_at": null
-        },
-        {
-            "id": 5,
-            "author_id": 9,
-            "user_id": 3,
-            "created_at": "2020-01-27 11:12:38",
-            "updated_at": "2020-01-27 11:12:38",
-            "deleted_at": null
-        }
-    ],
-    "result": "ok"
+    "message": "Too Many Attempts."
 }
 ```
 
@@ -585,6 +432,13 @@ fetch(url, {
 ```
 
 
+> Example response (429):
+
+```json
+{
+    "message": "Too Many Attempts."
+}
+```
 
 ### HTTP Request
 `GET api/authorUser/create`
@@ -602,7 +456,7 @@ curl -X POST \
     "http://localhost/api/authorUser" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"author_id":20,"user_id":1}'
+    -d '{"author_id":2,"user_id":6}'
 
 ```
 
@@ -617,8 +471,8 @@ let headers = {
 };
 
 let body = {
-    "author_id": 20,
-    "user_id": 1
+    "author_id": 2,
+    "user_id": 6
 }
 
 fetch(url, {
@@ -674,20 +528,11 @@ fetch(url, {
 ```
 
 
-> Example response (200):
+> Example response (429):
 
 ```json
 {
-    "message": "Autor Favorito do User selecionado",
-    "data": {
-        "id": 1,
-        "author_id": 11,
-        "user_id": 5,
-        "created_at": "2020-01-27 11:12:37",
-        "updated_at": "2020-01-27 11:12:37",
-        "deleted_at": null
-    },
-    "result": "ok"
+    "message": "Too Many Attempts."
 }
 ```
 
@@ -728,6 +573,13 @@ fetch(url, {
 ```
 
 
+> Example response (429):
+
+```json
+{
+    "message": "Too Many Attempts."
+}
+```
 
 ### HTTP Request
 `GET api/authorUser/{authorUser}/edit`
@@ -745,7 +597,7 @@ curl -X PUT \
     "http://localhost/api/authorUser/1" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"author_id":6,"user_id":14}'
+    -d '{"author_id":14,"user_id":3}'
 
 ```
 
@@ -760,8 +612,8 @@ let headers = {
 };
 
 let body = {
-    "author_id": 6,
-    "user_id": 14
+    "author_id": 14,
+    "user_id": 3
 }
 
 fetch(url, {
@@ -860,326 +712,11 @@ fetch(url, {
 ```
 
 
-> Example response (200):
+> Example response (429):
 
 ```json
 {
-    "message": "Lista de categorias",
-    "data": [
-        {
-            "id": 1,
-            "category": "Política",
-            "image": "images\/categories\/politica.jpg",
-            "created_at": "2020-01-27 11:12:09",
-            "updated_at": "2020-01-27 11:12:09",
-            "deleted_at": null
-        },
-        {
-            "id": 2,
-            "category": "Sociedade",
-            "image": "images\/categories\/sociedade.jpg",
-            "created_at": "2020-01-27 11:12:09",
-            "updated_at": "2020-01-27 11:12:09",
-            "deleted_at": null
-        },
-        {
-            "id": 3,
-            "category": "Local",
-            "image": "images\/categories\/local.jpg",
-            "created_at": "2020-01-27 11:12:09",
-            "updated_at": "2020-01-27 11:12:09",
-            "deleted_at": null
-        },
-        {
-            "id": 4,
-            "category": "Economia",
-            "image": "economia.jpg",
-            "created_at": "2020-01-27 11:12:09",
-            "updated_at": "2020-01-27 11:12:09",
-            "deleted_at": null
-        },
-        {
-            "id": 5,
-            "category": "Mundo",
-            "image": "mundo.jpg",
-            "created_at": "2020-01-27 11:12:09",
-            "updated_at": "2020-01-27 11:12:09",
-            "deleted_at": null
-        },
-        {
-            "id": 6,
-            "category": "Cultura",
-            "image": "cultura.jpg",
-            "created_at": "2020-01-27 11:12:09",
-            "updated_at": "2020-01-27 11:12:09",
-            "deleted_at": null
-        },
-        {
-            "id": 7,
-            "category": "Desporto",
-            "image": "desporto.jpg",
-            "created_at": "2020-01-27 11:12:10",
-            "updated_at": "2020-01-27 11:12:10",
-            "deleted_at": null
-        },
-        {
-            "id": 8,
-            "category": "Ciência",
-            "image": "ciência.jpg",
-            "created_at": "2020-01-27 11:12:10",
-            "updated_at": "2020-01-27 11:12:10",
-            "deleted_at": null
-        },
-        {
-            "id": 9,
-            "category": "Tecnologia",
-            "image": "tecnologia.jpg",
-            "created_at": "2020-01-27 11:12:10",
-            "updated_at": "2020-01-27 11:12:10",
-            "deleted_at": null
-        },
-        {
-            "id": 10,
-            "category": "Opinião",
-            "image": "opiniao.jpg",
-            "created_at": "2020-01-27 11:12:10",
-            "updated_at": "2020-01-27 11:12:10",
-            "deleted_at": null
-        },
-        {
-            "id": 11,
-            "category": "PGlobal",
-            "image": "pglobal.jpg",
-            "created_at": "2020-01-27 11:12:10",
-            "updated_at": "2020-01-27 11:12:10",
-            "deleted_at": null
-        },
-        {
-            "id": 12,
-            "category": "Editoriais",
-            "image": "editoriais.jpg",
-            "created_at": "2020-01-27 11:12:10",
-            "updated_at": "2020-01-27 11:12:10",
-            "deleted_at": null
-        },
-        {
-            "id": 13,
-            "category": "Bartoon",
-            "image": "bartoon.jpg",
-            "created_at": "2020-01-27 11:12:10",
-            "updated_at": "2020-01-27 11:12:10",
-            "deleted_at": null
-        },
-        {
-            "id": 14,
-            "category": "Ensaio",
-            "image": "ensaio.jpg",
-            "created_at": "2020-01-27 11:12:10",
-            "updated_at": "2020-01-27 11:12:10",
-            "deleted_at": null
-        },
-        {
-            "id": 15,
-            "category": "Bem-Estar",
-            "image": "bemestar.jpg",
-            "created_at": "2020-01-27 11:12:10",
-            "updated_at": "2020-01-27 11:12:10",
-            "deleted_at": null
-        },
-        {
-            "id": 16,
-            "category": "Alimentação",
-            "image": "alimentacao.jpg",
-            "created_at": "2020-01-27 11:12:10",
-            "updated_at": "2020-01-27 11:12:10",
-            "deleted_at": null
-        },
-        {
-            "id": 17,
-            "category": "Relações",
-            "image": "relacoes.jpg",
-            "created_at": "2020-01-27 11:12:10",
-            "updated_at": "2020-01-27 11:12:10",
-            "deleted_at": null
-        },
-        {
-            "id": 18,
-            "category": "Moda",
-            "image": "moda.jpg",
-            "created_at": "2020-01-27 11:12:10",
-            "updated_at": "2020-01-27 11:12:10",
-            "deleted_at": null
-        },
-        {
-            "id": 19,
-            "category": "Beleza",
-            "image": "beleza.jpg",
-            "created_at": "2020-01-27 11:12:10",
-            "updated_at": "2020-01-27 11:12:10",
-            "deleted_at": null
-        },
-        {
-            "id": 20,
-            "category": "Casa",
-            "image": "casa.jpg",
-            "created_at": "2020-01-27 11:12:10",
-            "updated_at": "2020-01-27 11:12:10",
-            "deleted_at": null
-        },
-        {
-            "id": 21,
-            "category": "Pessoas",
-            "image": "pessoas.jpg",
-            "created_at": "2020-01-27 11:12:10",
-            "updated_at": "2020-01-27 11:12:10",
-            "deleted_at": null
-        },
-        {
-            "id": 22,
-            "category": "Viagens",
-            "image": "viagens.jpg",
-            "created_at": "2020-01-27 11:12:10",
-            "updated_at": "2020-01-27 11:12:10",
-            "deleted_at": null
-        },
-        {
-            "id": 23,
-            "category": "Passeios",
-            "image": "passeios.jpg",
-            "created_at": "2020-01-27 11:12:10",
-            "updated_at": "2020-01-27 11:12:10",
-            "deleted_at": null
-        },
-        {
-            "id": 24,
-            "category": "Hóteis",
-            "image": "hoteis.jpg",
-            "created_at": "2020-01-27 11:12:10",
-            "updated_at": "2020-01-27 11:12:10",
-            "deleted_at": null
-        },
-        {
-            "id": 25,
-            "category": "Gastronomia",
-            "image": "gastronomia.jpg",
-            "created_at": "2020-01-27 11:12:10",
-            "updated_at": "2020-01-27 11:12:10",
-            "deleted_at": null
-        },
-        {
-            "id": 26,
-            "category": "Bares",
-            "image": "bares.jpg",
-            "created_at": "2020-01-27 11:12:10",
-            "updated_at": "2020-01-27 11:12:10",
-            "deleted_at": null
-        },
-        {
-            "id": 27,
-            "category": "Protagonista",
-            "image": "protagonista.jpg",
-            "created_at": "2020-01-27 11:12:10",
-            "updated_at": "2020-01-27 11:12:10",
-            "deleted_at": null
-        },
-        {
-            "id": 28,
-            "category": "Atualidade",
-            "image": "atualidade.jpg",
-            "created_at": "2020-01-27 11:12:10",
-            "updated_at": "2020-01-27 11:12:10",
-            "deleted_at": null
-        },
-        {
-            "id": 29,
-            "category": "Vícios",
-            "image": "vicios.jpg",
-            "created_at": "2020-01-27 11:12:11",
-            "updated_at": "2020-01-27 11:12:11",
-            "deleted_at": null
-        },
-        {
-            "id": 30,
-            "category": "Multimédia",
-            "image": "multimedia.jpg",
-            "created_at": "2020-01-27 11:12:11",
-            "updated_at": "2020-01-27 11:12:11",
-            "deleted_at": null
-        },
-        {
-            "id": 31,
-            "category": "Causas",
-            "image": "causas.jpg",
-            "created_at": "2020-01-27 11:12:11",
-            "updated_at": "2020-01-27 11:12:11",
-            "deleted_at": null
-        },
-        {
-            "id": 32,
-            "category": "Megafone",
-            "image": "megafone.jpg",
-            "created_at": "2020-01-27 11:12:11",
-            "updated_at": "2020-01-27 11:12:11",
-            "deleted_at": null
-        },
-        {
-            "id": 33,
-            "category": "Pet",
-            "image": "pet.jpg",
-            "created_at": "2020-01-27 11:12:11",
-            "updated_at": "2020-01-27 11:12:11",
-            "deleted_at": null
-        },
-        {
-            "id": 34,
-            "category": "Estreias",
-            "image": "estreias.jpg",
-            "created_at": "2020-01-27 11:12:11",
-            "updated_at": "2020-01-27 11:12:11",
-            "deleted_at": null
-        },
-        {
-            "id": 35,
-            "category": "Trailers",
-            "image": "trailers.jpg",
-            "created_at": "2020-01-27 11:12:11",
-            "updated_at": "2020-01-27 11:12:11",
-            "deleted_at": null
-        },
-        {
-            "id": 36,
-            "category": "Em-Breve",
-            "image": "embreve.jpg",
-            "created_at": "2020-01-27 11:12:11",
-            "updated_at": "2020-01-27 11:12:11",
-            "deleted_at": null
-        },
-        {
-            "id": 37,
-            "category": "Críticas",
-            "image": "criticas.jpg",
-            "created_at": "2020-01-27 11:12:11",
-            "updated_at": "2020-01-27 11:12:11",
-            "deleted_at": null
-        },
-        {
-            "id": 38,
-            "category": "Notícias",
-            "image": "noticias.jpg",
-            "created_at": "2020-01-27 11:12:11",
-            "updated_at": "2020-01-27 11:12:11",
-            "deleted_at": null
-        },
-        {
-            "id": 39,
-            "category": "Passatempo",
-            "image": "passatempo.jpg",
-            "created_at": "2020-01-27 11:12:11",
-            "updated_at": "2020-01-27 11:12:11",
-            "deleted_at": null
-        }
-    ],
-    "result": "ok"
+    "message": "Too Many Attempts."
 }
 ```
 
@@ -1220,6 +757,13 @@ fetch(url, {
 ```
 
 
+> Example response (429):
+
+```json
+{
+    "message": "Too Many Attempts."
+}
+```
 
 ### HTTP Request
 `GET api/category/create`
@@ -1237,7 +781,7 @@ curl -X POST \
     "http://localhost/api/category" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"category":"voluptatem","image":"eligendi"}'
+    -d '{"category":"voluptatum","image":"ut"}'
 
 ```
 
@@ -1252,8 +796,8 @@ let headers = {
 };
 
 let body = {
-    "category": "voluptatem",
-    "image": "eligendi"
+    "category": "voluptatum",
+    "image": "ut"
 }
 
 fetch(url, {
@@ -1309,20 +853,11 @@ fetch(url, {
 ```
 
 
-> Example response (200):
+> Example response (429):
 
 ```json
 {
-    "message": "Categoria selecionada",
-    "data": {
-        "id": 1,
-        "category": "Política",
-        "image": "images\/categories\/politica.jpg",
-        "created_at": "2020-01-27 11:12:09",
-        "updated_at": "2020-01-27 11:12:09",
-        "deleted_at": null
-    },
-    "result": "ok"
+    "message": "Too Many Attempts."
 }
 ```
 
@@ -1363,6 +898,13 @@ fetch(url, {
 ```
 
 
+> Example response (429):
+
+```json
+{
+    "message": "Too Many Attempts."
+}
+```
 
 ### HTTP Request
 `GET api/category/{category}/edit`
@@ -1380,7 +922,7 @@ curl -X PUT \
     "http://localhost/api/category/1" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"category":"nam","image":"autem"}'
+    -d '{"category":"rerum","image":"molestiae"}'
 
 ```
 
@@ -1395,8 +937,8 @@ let headers = {
 };
 
 let body = {
-    "category": "nam",
-    "image": "autem"
+    "category": "rerum",
+    "image": "molestiae"
 }
 
 fetch(url, {
@@ -1495,326 +1037,11 @@ fetch(url, {
 ```
 
 
-> Example response (200):
+> Example response (429):
 
 ```json
 {
-    "message": "Lista de ligações das categorias às publicações",
-    "data": [
-        {
-            "id": 1,
-            "category_id": 1,
-            "publication_id": 1,
-            "created_at": "2020-01-27 11:12:39",
-            "updated_at": "2020-01-27 11:12:39",
-            "deleted_at": null
-        },
-        {
-            "id": 2,
-            "category_id": 2,
-            "publication_id": 1,
-            "created_at": "2020-01-27 11:12:39",
-            "updated_at": "2020-01-27 11:12:39",
-            "deleted_at": null
-        },
-        {
-            "id": 3,
-            "category_id": 3,
-            "publication_id": 1,
-            "created_at": "2020-01-27 11:12:39",
-            "updated_at": "2020-01-27 11:12:39",
-            "deleted_at": null
-        },
-        {
-            "id": 4,
-            "category_id": 4,
-            "publication_id": 1,
-            "created_at": "2020-01-27 11:12:39",
-            "updated_at": "2020-01-27 11:12:39",
-            "deleted_at": null
-        },
-        {
-            "id": 5,
-            "category_id": 5,
-            "publication_id": 1,
-            "created_at": "2020-01-27 11:12:39",
-            "updated_at": "2020-01-27 11:12:39",
-            "deleted_at": null
-        },
-        {
-            "id": 6,
-            "category_id": 6,
-            "publication_id": 1,
-            "created_at": "2020-01-27 11:12:39",
-            "updated_at": "2020-01-27 11:12:39",
-            "deleted_at": null
-        },
-        {
-            "id": 7,
-            "category_id": 7,
-            "publication_id": 1,
-            "created_at": "2020-01-27 11:12:39",
-            "updated_at": "2020-01-27 11:12:39",
-            "deleted_at": null
-        },
-        {
-            "id": 8,
-            "category_id": 8,
-            "publication_id": 1,
-            "created_at": "2020-01-27 11:12:39",
-            "updated_at": "2020-01-27 11:12:39",
-            "deleted_at": null
-        },
-        {
-            "id": 9,
-            "category_id": 9,
-            "publication_id": 1,
-            "created_at": "2020-01-27 11:12:39",
-            "updated_at": "2020-01-27 11:12:39",
-            "deleted_at": null
-        },
-        {
-            "id": 10,
-            "category_id": 10,
-            "publication_id": 1,
-            "created_at": "2020-01-27 11:12:39",
-            "updated_at": "2020-01-27 11:12:39",
-            "deleted_at": null
-        },
-        {
-            "id": 11,
-            "category_id": 11,
-            "publication_id": 1,
-            "created_at": "2020-01-27 11:12:39",
-            "updated_at": "2020-01-27 11:12:39",
-            "deleted_at": null
-        },
-        {
-            "id": 12,
-            "category_id": 12,
-            "publication_id": 2,
-            "created_at": "2020-01-27 11:12:39",
-            "updated_at": "2020-01-27 11:12:39",
-            "deleted_at": null
-        },
-        {
-            "id": 13,
-            "category_id": 13,
-            "publication_id": 2,
-            "created_at": "2020-01-27 11:12:40",
-            "updated_at": "2020-01-27 11:12:40",
-            "deleted_at": null
-        },
-        {
-            "id": 14,
-            "category_id": 14,
-            "publication_id": 2,
-            "created_at": "2020-01-27 11:12:40",
-            "updated_at": "2020-01-27 11:12:40",
-            "deleted_at": null
-        },
-        {
-            "id": 15,
-            "category_id": 15,
-            "publication_id": 4,
-            "created_at": "2020-01-27 11:12:40",
-            "updated_at": "2020-01-27 11:12:40",
-            "deleted_at": null
-        },
-        {
-            "id": 16,
-            "category_id": 16,
-            "publication_id": 4,
-            "created_at": "2020-01-27 11:12:40",
-            "updated_at": "2020-01-27 11:12:40",
-            "deleted_at": null
-        },
-        {
-            "id": 17,
-            "category_id": 17,
-            "publication_id": 4,
-            "created_at": "2020-01-27 11:12:40",
-            "updated_at": "2020-01-27 11:12:40",
-            "deleted_at": null
-        },
-        {
-            "id": 18,
-            "category_id": 18,
-            "publication_id": 4,
-            "created_at": "2020-01-27 11:12:40",
-            "updated_at": "2020-01-27 11:12:40",
-            "deleted_at": null
-        },
-        {
-            "id": 19,
-            "category_id": 19,
-            "publication_id": 4,
-            "created_at": "2020-01-27 11:12:40",
-            "updated_at": "2020-01-27 11:12:40",
-            "deleted_at": null
-        },
-        {
-            "id": 20,
-            "category_id": 20,
-            "publication_id": 4,
-            "created_at": "2020-01-27 11:12:40",
-            "updated_at": "2020-01-27 11:12:40",
-            "deleted_at": null
-        },
-        {
-            "id": 21,
-            "category_id": 21,
-            "publication_id": 4,
-            "created_at": "2020-01-27 11:12:40",
-            "updated_at": "2020-01-27 11:12:40",
-            "deleted_at": null
-        },
-        {
-            "id": 22,
-            "category_id": 22,
-            "publication_id": 5,
-            "created_at": "2020-01-27 11:12:40",
-            "updated_at": "2020-01-27 11:12:40",
-            "deleted_at": null
-        },
-        {
-            "id": 23,
-            "category_id": 23,
-            "publication_id": 5,
-            "created_at": "2020-01-27 11:12:40",
-            "updated_at": "2020-01-27 11:12:40",
-            "deleted_at": null
-        },
-        {
-            "id": 24,
-            "category_id": 24,
-            "publication_id": 5,
-            "created_at": "2020-01-27 11:12:40",
-            "updated_at": "2020-01-27 11:12:40",
-            "deleted_at": null
-        },
-        {
-            "id": 25,
-            "category_id": 25,
-            "publication_id": 5,
-            "created_at": "2020-01-27 11:12:40",
-            "updated_at": "2020-01-27 11:12:40",
-            "deleted_at": null
-        },
-        {
-            "id": 26,
-            "category_id": 26,
-            "publication_id": 5,
-            "created_at": "2020-01-27 11:12:40",
-            "updated_at": "2020-01-27 11:12:40",
-            "deleted_at": null
-        },
-        {
-            "id": 27,
-            "category_id": 27,
-            "publication_id": 5,
-            "created_at": "2020-01-27 11:12:40",
-            "updated_at": "2020-01-27 11:12:40",
-            "deleted_at": null
-        },
-        {
-            "id": 28,
-            "category_id": 28,
-            "publication_id": 6,
-            "created_at": "2020-01-27 11:12:40",
-            "updated_at": "2020-01-27 11:12:40",
-            "deleted_at": null
-        },
-        {
-            "id": 29,
-            "category_id": 29,
-            "publication_id": 6,
-            "created_at": "2020-01-27 11:12:41",
-            "updated_at": "2020-01-27 11:12:41",
-            "deleted_at": null
-        },
-        {
-            "id": 30,
-            "category_id": 30,
-            "publication_id": 6,
-            "created_at": "2020-01-27 11:12:41",
-            "updated_at": "2020-01-27 11:12:41",
-            "deleted_at": null
-        },
-        {
-            "id": 31,
-            "category_id": 31,
-            "publication_id": 6,
-            "created_at": "2020-01-27 11:12:41",
-            "updated_at": "2020-01-27 11:12:41",
-            "deleted_at": null
-        },
-        {
-            "id": 32,
-            "category_id": 32,
-            "publication_id": 6,
-            "created_at": "2020-01-27 11:12:41",
-            "updated_at": "2020-01-27 11:12:41",
-            "deleted_at": null
-        },
-        {
-            "id": 33,
-            "category_id": 33,
-            "publication_id": 6,
-            "created_at": "2020-01-27 11:12:41",
-            "updated_at": "2020-01-27 11:12:41",
-            "deleted_at": null
-        },
-        {
-            "id": 34,
-            "category_id": 34,
-            "publication_id": 7,
-            "created_at": "2020-01-27 11:12:41",
-            "updated_at": "2020-01-27 11:12:41",
-            "deleted_at": null
-        },
-        {
-            "id": 35,
-            "category_id": 35,
-            "publication_id": 7,
-            "created_at": "2020-01-27 11:12:41",
-            "updated_at": "2020-01-27 11:12:41",
-            "deleted_at": null
-        },
-        {
-            "id": 36,
-            "category_id": 36,
-            "publication_id": 7,
-            "created_at": "2020-01-27 11:12:41",
-            "updated_at": "2020-01-27 11:12:41",
-            "deleted_at": null
-        },
-        {
-            "id": 37,
-            "category_id": 37,
-            "publication_id": 7,
-            "created_at": "2020-01-27 11:12:41",
-            "updated_at": "2020-01-27 11:12:41",
-            "deleted_at": null
-        },
-        {
-            "id": 38,
-            "category_id": 38,
-            "publication_id": 7,
-            "created_at": "2020-01-27 11:12:41",
-            "updated_at": "2020-01-27 11:12:41",
-            "deleted_at": null
-        },
-        {
-            "id": 39,
-            "category_id": 39,
-            "publication_id": 7,
-            "created_at": "2020-01-27 11:12:41",
-            "updated_at": "2020-01-27 11:12:41",
-            "deleted_at": null
-        }
-    ],
-    "result": "ok"
+    "message": "Too Many Attempts."
 }
 ```
 
@@ -1855,6 +1082,13 @@ fetch(url, {
 ```
 
 
+> Example response (429):
+
+```json
+{
+    "message": "Too Many Attempts."
+}
+```
 
 ### HTTP Request
 `GET api/categoryPublication/create`
@@ -1872,7 +1106,7 @@ curl -X POST \
     "http://localhost/api/categoryPublication" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"category_id":13,"publication_id":12}'
+    -d '{"category_id":7,"publication_id":9}'
 
 ```
 
@@ -1887,8 +1121,8 @@ let headers = {
 };
 
 let body = {
-    "category_id": 13,
-    "publication_id": 12
+    "category_id": 7,
+    "publication_id": 9
 }
 
 fetch(url, {
@@ -1944,20 +1178,11 @@ fetch(url, {
 ```
 
 
-> Example response (200):
+> Example response (429):
 
 ```json
 {
-    "message": "Ligação selecionada",
-    "data": {
-        "id": 1,
-        "category_id": 1,
-        "publication_id": 1,
-        "created_at": "2020-01-27 11:12:39",
-        "updated_at": "2020-01-27 11:12:39",
-        "deleted_at": null
-    },
-    "result": "ok"
+    "message": "Too Many Attempts."
 }
 ```
 
@@ -1998,6 +1223,13 @@ fetch(url, {
 ```
 
 
+> Example response (429):
+
+```json
+{
+    "message": "Too Many Attempts."
+}
+```
 
 ### HTTP Request
 `GET api/categoryPublication/{categoryPublication}/edit`
@@ -2015,7 +1247,7 @@ curl -X PUT \
     "http://localhost/api/categoryPublication/1" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"category_id":12,"publication_id":3}'
+    -d '{"category_id":13,"publication_id":18}'
 
 ```
 
@@ -2030,8 +1262,8 @@ let headers = {
 };
 
 let body = {
-    "category_id": 12,
-    "publication_id": 3
+    "category_id": 13,
+    "publication_id": 18
 }
 
 fetch(url, {
@@ -2130,174 +1362,11 @@ fetch(url, {
 ```
 
 
-> Example response (200):
+> Example response (429):
 
 ```json
 {
-    "message": "Lista de Categorias Favoritas dos Users",
-    "data": [
-        {
-            "id": 1,
-            "category_id": 1,
-            "user_id": 3,
-            "created_at": "2020-01-27 11:12:45",
-            "updated_at": "2020-01-27 11:12:45",
-            "deleted_at": null
-        },
-        {
-            "id": 2,
-            "category_id": 4,
-            "user_id": 3,
-            "created_at": "2020-01-27 11:12:46",
-            "updated_at": "2020-01-27 11:12:46",
-            "deleted_at": null
-        },
-        {
-            "id": 3,
-            "category_id": 6,
-            "user_id": 3,
-            "created_at": "2020-01-27 11:12:46",
-            "updated_at": "2020-01-27 11:12:46",
-            "deleted_at": null
-        },
-        {
-            "id": 4,
-            "category_id": 39,
-            "user_id": 3,
-            "created_at": "2020-01-27 11:12:46",
-            "updated_at": "2020-01-27 11:12:46",
-            "deleted_at": null
-        },
-        {
-            "id": 5,
-            "category_id": 9,
-            "user_id": 4,
-            "created_at": "2020-01-27 11:12:46",
-            "updated_at": "2020-01-27 11:12:46",
-            "deleted_at": null
-        },
-        {
-            "id": 6,
-            "category_id": 17,
-            "user_id": 4,
-            "created_at": "2020-01-27 11:12:46",
-            "updated_at": "2020-01-27 11:12:46",
-            "deleted_at": null
-        },
-        {
-            "id": 7,
-            "category_id": 15,
-            "user_id": 4,
-            "created_at": "2020-01-27 11:12:46",
-            "updated_at": "2020-01-27 11:12:46",
-            "deleted_at": null
-        },
-        {
-            "id": 8,
-            "category_id": 20,
-            "user_id": 4,
-            "created_at": "2020-01-27 11:12:46",
-            "updated_at": "2020-01-27 11:12:46",
-            "deleted_at": null
-        },
-        {
-            "id": 9,
-            "category_id": 3,
-            "user_id": 5,
-            "created_at": "2020-01-27 11:12:46",
-            "updated_at": "2020-01-27 11:12:46",
-            "deleted_at": null
-        },
-        {
-            "id": 10,
-            "category_id": 16,
-            "user_id": 5,
-            "created_at": "2020-01-27 11:12:46",
-            "updated_at": "2020-01-27 11:12:46",
-            "deleted_at": null
-        },
-        {
-            "id": 11,
-            "category_id": 25,
-            "user_id": 5,
-            "created_at": "2020-01-27 11:12:46",
-            "updated_at": "2020-01-27 11:12:46",
-            "deleted_at": null
-        },
-        {
-            "id": 12,
-            "category_id": 33,
-            "user_id": 5,
-            "created_at": "2020-01-27 11:12:46",
-            "updated_at": "2020-01-27 11:12:46",
-            "deleted_at": null
-        },
-        {
-            "id": 13,
-            "category_id": 2,
-            "user_id": 6,
-            "created_at": "2020-01-27 11:12:46",
-            "updated_at": "2020-01-27 11:12:46",
-            "deleted_at": null
-        },
-        {
-            "id": 14,
-            "category_id": 6,
-            "user_id": 6,
-            "created_at": "2020-01-27 11:12:46",
-            "updated_at": "2020-01-27 11:12:46",
-            "deleted_at": null
-        },
-        {
-            "id": 15,
-            "category_id": 11,
-            "user_id": 6,
-            "created_at": "2020-01-27 11:12:46",
-            "updated_at": "2020-01-27 11:12:46",
-            "deleted_at": null
-        },
-        {
-            "id": 16,
-            "category_id": 38,
-            "user_id": 6,
-            "created_at": "2020-01-27 11:12:46",
-            "updated_at": "2020-01-27 11:12:46",
-            "deleted_at": null
-        },
-        {
-            "id": 17,
-            "category_id": 14,
-            "user_id": 7,
-            "created_at": "2020-01-27 11:12:46",
-            "updated_at": "2020-01-27 11:12:46",
-            "deleted_at": null
-        },
-        {
-            "id": 18,
-            "category_id": 25,
-            "user_id": 7,
-            "created_at": "2020-01-27 11:12:47",
-            "updated_at": "2020-01-27 11:12:47",
-            "deleted_at": null
-        },
-        {
-            "id": 19,
-            "category_id": 22,
-            "user_id": 7,
-            "created_at": "2020-01-27 11:12:47",
-            "updated_at": "2020-01-27 11:12:47",
-            "deleted_at": null
-        },
-        {
-            "id": 20,
-            "category_id": 35,
-            "user_id": 7,
-            "created_at": "2020-01-27 11:12:47",
-            "updated_at": "2020-01-27 11:12:47",
-            "deleted_at": null
-        }
-    ],
-    "result": "ok"
+    "message": "Too Many Attempts."
 }
 ```
 
@@ -2338,6 +1407,13 @@ fetch(url, {
 ```
 
 
+> Example response (429):
+
+```json
+{
+    "message": "Too Many Attempts."
+}
+```
 
 ### HTTP Request
 `GET api/categoryUser/create`
@@ -2355,7 +1431,7 @@ curl -X POST \
     "http://localhost/api/categoryUser" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"category_id":10,"user_id":11}'
+    -d '{"category_id":20,"user_id":13}'
 
 ```
 
@@ -2370,8 +1446,8 @@ let headers = {
 };
 
 let body = {
-    "category_id": 10,
-    "user_id": 11
+    "category_id": 20,
+    "user_id": 13
 }
 
 fetch(url, {
@@ -2427,20 +1503,11 @@ fetch(url, {
 ```
 
 
-> Example response (200):
+> Example response (429):
 
 ```json
 {
-    "message": "Categoria Favorita do User selecionada",
-    "data": {
-        "id": 1,
-        "category_id": 1,
-        "user_id": 3,
-        "created_at": "2020-01-27 11:12:45",
-        "updated_at": "2020-01-27 11:12:45",
-        "deleted_at": null
-    },
-    "result": "ok"
+    "message": "Too Many Attempts."
 }
 ```
 
@@ -2481,6 +1548,13 @@ fetch(url, {
 ```
 
 
+> Example response (429):
+
+```json
+{
+    "message": "Too Many Attempts."
+}
+```
 
 ### HTTP Request
 `GET api/categoryUser/{categoryUser}/edit`
@@ -2498,7 +1572,7 @@ curl -X PUT \
     "http://localhost/api/categoryUser/1" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"category_id":7,"user_id":18}'
+    -d '{"category_id":7,"user_id":3}'
 
 ```
 
@@ -2514,7 +1588,7 @@ let headers = {
 
 let body = {
     "category_id": 7,
-    "user_id": 18
+    "user_id": 3
 }
 
 fetch(url, {
@@ -2682,7 +1756,7 @@ curl -X POST \
     "http://localhost/api/collection" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"collection":"aperiam","user_id":1}'
+    -d '{"collection":"est","user_id":16}'
 
 ```
 
@@ -2697,8 +1771,8 @@ let headers = {
 };
 
 let body = {
-    "collection": "aperiam",
-    "user_id": 1
+    "collection": "est",
+    "user_id": 16
 }
 
 fetch(url, {
@@ -2778,7 +1852,7 @@ curl -X GET \
     -G "http://localhost/api/collection/1/edit" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"collection":"suscipit","user_id":15}'
+    -d '{"collection":"in","user_id":16}'
 
 ```
 
@@ -2793,8 +1867,8 @@ let headers = {
 };
 
 let body = {
-    "collection": "suscipit",
-    "user_id": 15
+    "collection": "in",
+    "user_id": 16
 }
 
 fetch(url, {
@@ -2836,7 +1910,7 @@ curl -X PUT \
     "http://localhost/api/collection/1" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"collection":"minima","user_id":4}'
+    -d '{"collection":"quos","user_id":2}'
 
 ```
 
@@ -2851,8 +1925,8 @@ let headers = {
 };
 
 let body = {
-    "collection": "minima",
-    "user_id": 4
+    "collection": "quos",
+    "user_id": 2
 }
 
 fetch(url, {
@@ -2951,154 +2025,11 @@ fetch(url, {
 ```
 
 
-> Example response (200):
+> Example response (429):
 
 ```json
 {
-    "message": "Lista de Profissoes\r\n            ",
-    "data": [
-        {
-            "id": 1,
-            "job": "Jornalista",
-            "created_at": "2020-01-27 11:12:12",
-            "updated_at": "2020-01-27 11:12:12",
-            "deleted_at": null
-        },
-        {
-            "id": 2,
-            "job": "Fotojornalista",
-            "created_at": "2020-01-27 11:12:12",
-            "updated_at": "2020-01-27 11:12:12",
-            "deleted_at": null
-        },
-        {
-            "id": 3,
-            "job": "Geógrafo",
-            "created_at": "2020-01-27 11:12:12",
-            "updated_at": "2020-01-27 11:12:12",
-            "deleted_at": null
-        },
-        {
-            "id": 4,
-            "job": "Editor de Política",
-            "created_at": "2020-01-27 11:12:12",
-            "updated_at": "2020-01-27 11:12:12",
-            "deleted_at": null
-        },
-        {
-            "id": 5,
-            "job": "Diretor-Adjunto",
-            "created_at": "2020-01-27 11:12:13",
-            "updated_at": "2020-01-27 11:12:13",
-            "deleted_at": null
-        },
-        {
-            "id": 6,
-            "job": "Diretor de Local",
-            "created_at": "2020-01-27 11:12:13",
-            "updated_at": "2020-01-27 11:12:13",
-            "deleted_at": null
-        },
-        {
-            "id": 7,
-            "job": "Editor de Mundo",
-            "created_at": "2020-01-27 11:12:13",
-            "updated_at": "2020-01-27 11:12:13",
-            "deleted_at": null
-        },
-        {
-            "id": 8,
-            "job": "Estagiária",
-            "created_at": "2020-01-27 11:12:13",
-            "updated_at": "2020-01-27 11:12:13",
-            "deleted_at": null
-        },
-        {
-            "id": 9,
-            "job": "Diretora-Adjunta",
-            "created_at": "2020-01-27 11:12:13",
-            "updated_at": "2020-01-27 11:12:13",
-            "deleted_at": null
-        },
-        {
-            "id": 10,
-            "job": "Jornalísta Estagiário",
-            "created_at": "2020-01-27 11:12:13",
-            "updated_at": "2020-01-27 11:12:13",
-            "deleted_at": null
-        },
-        {
-            "id": 11,
-            "job": "Web Designer",
-            "created_at": "2020-01-27 11:12:13",
-            "updated_at": "2020-01-27 11:12:13",
-            "deleted_at": null
-        },
-        {
-            "id": 12,
-            "job": "Economista",
-            "created_at": "2020-01-27 11:12:13",
-            "updated_at": "2020-01-27 11:12:13",
-            "deleted_at": null
-        },
-        {
-            "id": 13,
-            "job": "Sociólogo",
-            "created_at": "2020-01-27 11:12:13",
-            "updated_at": "2020-01-27 11:12:13",
-            "deleted_at": null
-        },
-        {
-            "id": 14,
-            "job": "Presidente do Instituto Superior Técnico",
-            "created_at": "2020-01-27 11:12:13",
-            "updated_at": "2020-01-27 11:12:13",
-            "deleted_at": null
-        },
-        {
-            "id": 15,
-            "job": "Colunista",
-            "created_at": "2020-01-27 11:12:13",
-            "updated_at": "2020-01-27 11:12:13",
-            "deleted_at": null
-        },
-        {
-            "id": 16,
-            "job": "Copy Editor",
-            "created_at": "2020-01-27 11:12:13",
-            "updated_at": "2020-01-27 11:12:13",
-            "deleted_at": null
-        },
-        {
-            "id": 17,
-            "job": "Redatora Principal",
-            "created_at": "2020-01-27 11:12:13",
-            "updated_at": "2020-01-27 11:12:13",
-            "deleted_at": null
-        },
-        {
-            "id": 18,
-            "job": "Sub-Editora do Mundo",
-            "created_at": "2020-01-27 11:12:13",
-            "updated_at": "2020-01-27 11:12:13",
-            "deleted_at": null
-        },
-        {
-            "id": 19,
-            "job": "Infografia",
-            "created_at": "2020-01-27 11:12:13",
-            "updated_at": "2020-01-27 11:12:13",
-            "deleted_at": null
-        },
-        {
-            "id": 20,
-            "job": "Designer Digital",
-            "created_at": "2020-01-27 11:12:13",
-            "updated_at": "2020-01-27 11:12:13",
-            "deleted_at": null
-        }
-    ],
-    "result": "ok"
+    "message": "Too Many Attempts."
 }
 ```
 
@@ -3139,6 +2070,13 @@ fetch(url, {
 ```
 
 
+> Example response (429):
+
+```json
+{
+    "message": "Too Many Attempts."
+}
+```
 
 ### HTTP Request
 `GET api/job/create`
@@ -3156,7 +2094,7 @@ curl -X POST \
     "http://localhost/api/job" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"job":"impedit"}'
+    -d '{"job":"aut"}'
 
 ```
 
@@ -3171,7 +2109,7 @@ let headers = {
 };
 
 let body = {
-    "job": "impedit"
+    "job": "aut"
 }
 
 fetch(url, {
@@ -3226,19 +2164,11 @@ fetch(url, {
 ```
 
 
-> Example response (200):
+> Example response (429):
 
 ```json
 {
-    "message": "Autor selecionado",
-    "data": {
-        "id": 1,
-        "job": "Jornalista",
-        "created_at": "2020-01-27 11:12:12",
-        "updated_at": "2020-01-27 11:12:12",
-        "deleted_at": null
-    },
-    "result": "ok"
+    "message": "Too Many Attempts."
 }
 ```
 
@@ -3279,6 +2209,13 @@ fetch(url, {
 ```
 
 
+> Example response (429):
+
+```json
+{
+    "message": "Too Many Attempts."
+}
+```
 
 ### HTTP Request
 `GET api/job/{job}/edit`
@@ -3296,7 +2233,7 @@ curl -X PUT \
     "http://localhost/api/job/1" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"job":"earum"}'
+    -d '{"job":"facilis"}'
 
 ```
 
@@ -3311,7 +2248,7 @@ let headers = {
 };
 
 let body = {
-    "job": "earum"
+    "job": "facilis"
 }
 
 fetch(url, {
@@ -3409,74 +2346,11 @@ fetch(url, {
 ```
 
 
-> Example response (200):
+> Example response (429):
 
 ```json
 {
-    "message": "Lista de Notícias",
-    "data": [
-        {
-            "id": 1,
-            "title": "Bem-vindos anos 20",
-            "image": "images\/news\/anos20.jpg",
-            "url": "https:\/\/www.publico.pt\/2019\/12\/30\/culturaipsilon\/opiniao\/bemvindos-anos-20-1898758",
-            "subtitle": "Quanto tempo faltará para alguém chamar à nova década “os novos anos 20”? Dois dias? Ou a década de Billie Eilish?",
-            "news_size_id": 2,
-            "category_id": 10,
-            "created_at": "2020-01-27 11:12:25",
-            "updated_at": "2020-01-27 11:12:25",
-            "deleted_at": null
-        },
-        {
-            "id": 2,
-            "title": "A viragem consumou-se: motor a gasolina pôs fim ao reinado diesel",
-            "image": "images\/news\/diesel.jpg",
-            "url": "https:\/\/www.publico.pt\/2020\/01\/02\/economia\/noticia\/viragem-consumouse-motor-gasolina-pos-fim-reinado-dieseli-1899048",
-            "subtitle": "Motor a gasóleo liderava há 15 anos. Agora, mais portugueses preferem carros a gasolina. Eléctricos puros cresceram 2,7%. Tesla tem quota de 27,8%.",
-            "news_size_id": 3,
-            "category_id": 4,
-            "created_at": "2020-01-27 11:12:26",
-            "updated_at": "2020-01-27 11:12:26",
-            "deleted_at": null
-        },
-        {
-            "id": 3,
-            "title": "Nos votos de Ano Novo, a justiça levou a Belém uma “sexta-feira da Paixão”",
-            "image": "images\/news\/anonovo.jpg",
-            "url": "https:\/\/www.publico.pt\/2020\/01\/02\/politica\/noticia\/votos-ano-novo-justica-levou-belem-sextafeira-paixao-1899076",
-            "subtitle": "Presidentes dos tribunais supremos, procuradora-geral da República e provedora de justiça tiveram, pela primeira vez, oportunidade de falar publicamente na Presidência da República. ",
-            "news_size_id": 3,
-            "category_id": 1,
-            "created_at": "2020-01-27 11:12:26",
-            "updated_at": "2020-01-27 11:12:26",
-            "deleted_at": null
-        },
-        {
-            "id": 4,
-            "title": "Australianos fogem das chamas incontroláveis, à espera de mais um dia de inferno",
-            "image": "images\/news\/australia.jpg",
-            "url": "https:\/\/www.publico.pt\/2020\/01\/02\/mundo\/noticia\/australianos-fogem-chamas-incontrolaveis-espera-dia-inferno-1899066",
-            "subtitle": "As autoridades estão a ordenar a retirada de milhares de pessoas da costa Sul do país, antecipando um dia potencialmente catastrófico para Sábado. ",
-            "news_size_id": 3,
-            "category_id": 5,
-            "created_at": "2020-01-27 11:12:26",
-            "updated_at": "2020-01-27 11:12:26",
-            "deleted_at": null
-        },
-        {
-            "id": 5,
-            "title": "Luxemburgo testa sistema de transportes públicos grátis na passagem de ano",
-            "image": "images\/news\/luxemburgo.jpg",
-            "url": "https:\/\/www.publico.pt\/2019\/12\/30\/mundo\/noticia\/luxemburgo-testa-sistema-transportes-publicos-gratis-passagem-ano-1898795",
-            "subtitle": "Transportes totalmente gratuitos vão entrar em vigor em Março. ",
-            "news_size_id": 2,
-            "category_id": 5,
-            "created_at": "2020-01-27 11:12:26",
-            "updated_at": "2020-01-27 11:12:26",
-            "deleted_at": null
-        }
-    ],
-    "result": "ok"
+    "message": "Too Many Attempts."
 }
 ```
 
@@ -3517,6 +2391,13 @@ fetch(url, {
 ```
 
 
+> Example response (429):
+
+```json
+{
+    "message": "Too Many Attempts."
+}
+```
 
 ### HTTP Request
 `GET api/news/create`
@@ -3534,7 +2415,7 @@ curl -X POST \
     "http://localhost/api/news" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"title":"mollitia","image":"nihil","url":"minus","subtitle":"rerum","news_size_id":13,"category_id":1}'
+    -d '{"title":"pariatur","image":"labore","url":"consequatur","subtitle":"saepe","news_size_id":14,"category_id":6}'
 
 ```
 
@@ -3549,12 +2430,12 @@ let headers = {
 };
 
 let body = {
-    "title": "mollitia",
-    "image": "nihil",
-    "url": "minus",
-    "subtitle": "rerum",
-    "news_size_id": 13,
-    "category_id": 1
+    "title": "pariatur",
+    "image": "labore",
+    "url": "consequatur",
+    "subtitle": "saepe",
+    "news_size_id": 14,
+    "category_id": 6
 }
 
 fetch(url, {
@@ -3614,24 +2495,11 @@ fetch(url, {
 ```
 
 
-> Example response (200):
+> Example response (429):
 
 ```json
 {
-    "message": "Notícia selecionada",
-    "data": {
-        "id": 1,
-        "title": "Bem-vindos anos 20",
-        "image": "images\/news\/anos20.jpg",
-        "url": "https:\/\/www.publico.pt\/2019\/12\/30\/culturaipsilon\/opiniao\/bemvindos-anos-20-1898758",
-        "subtitle": "Quanto tempo faltará para alguém chamar à nova década “os novos anos 20”? Dois dias? Ou a década de Billie Eilish?",
-        "news_size_id": 2,
-        "category_id": 10,
-        "created_at": "2020-01-27 11:12:25",
-        "updated_at": "2020-01-27 11:12:25",
-        "deleted_at": null
-    },
-    "result": "ok"
+    "message": "Too Many Attempts."
 }
 ```
 
@@ -3672,6 +2540,13 @@ fetch(url, {
 ```
 
 
+> Example response (429):
+
+```json
+{
+    "message": "Too Many Attempts."
+}
+```
 
 ### HTTP Request
 `GET api/news/{news}/edit`
@@ -3689,7 +2564,7 @@ curl -X PUT \
     "http://localhost/api/news/1" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"title":"at","image":"et","url":"reprehenderit","subtitle":"nobis","news_size_id":5,"category_id":3}'
+    -d '{"title":"corporis","image":"non","url":"iusto","subtitle":"est","news_size_id":18,"category_id":16}'
 
 ```
 
@@ -3704,12 +2579,12 @@ let headers = {
 };
 
 let body = {
-    "title": "at",
-    "image": "et",
-    "url": "reprehenderit",
-    "subtitle": "nobis",
-    "news_size_id": 5,
-    "category_id": 3
+    "title": "corporis",
+    "image": "non",
+    "url": "iusto",
+    "subtitle": "est",
+    "news_size_id": 18,
+    "category_id": 16
 }
 
 fetch(url, {
@@ -3812,35 +2687,11 @@ fetch(url, {
 ```
 
 
-> Example response (200):
+> Example response (429):
 
 ```json
 {
-    "message": "Lista de Tamanho de Notícias",
-    "data": [
-        {
-            "id": 1,
-            "size": "Curta",
-            "created_at": "2020-01-27 11:12:14",
-            "updated_at": "2020-01-27 11:12:14",
-            "deleted_at": null
-        },
-        {
-            "id": 2,
-            "size": "Média",
-            "created_at": "2020-01-27 11:12:14",
-            "updated_at": "2020-01-27 11:12:14",
-            "deleted_at": null
-        },
-        {
-            "id": 3,
-            "size": "Longa",
-            "created_at": "2020-01-27 11:12:14",
-            "updated_at": "2020-01-27 11:12:14",
-            "deleted_at": null
-        }
-    ],
-    "result": "ok"
+    "message": "Too Many Attempts."
 }
 ```
 
@@ -3881,6 +2732,13 @@ fetch(url, {
 ```
 
 
+> Example response (429):
+
+```json
+{
+    "message": "Too Many Attempts."
+}
+```
 
 ### HTTP Request
 `GET api/newsSize/create`
@@ -3898,7 +2756,7 @@ curl -X POST \
     "http://localhost/api/newsSize" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"size":"provident"}'
+    -d '{"size":"consequatur"}'
 
 ```
 
@@ -3913,7 +2771,7 @@ let headers = {
 };
 
 let body = {
-    "size": "provident"
+    "size": "consequatur"
 }
 
 fetch(url, {
@@ -3968,19 +2826,11 @@ fetch(url, {
 ```
 
 
-> Example response (200):
+> Example response (429):
 
 ```json
 {
-    "message": "Autor selecionado",
-    "data": {
-        "id": 1,
-        "size": "Curta",
-        "created_at": "2020-01-27 11:12:14",
-        "updated_at": "2020-01-27 11:12:14",
-        "deleted_at": null
-    },
-    "result": "ok"
+    "message": "Too Many Attempts."
 }
 ```
 
@@ -4021,6 +2871,13 @@ fetch(url, {
 ```
 
 
+> Example response (429):
+
+```json
+{
+    "message": "Too Many Attempts."
+}
+```
 
 ### HTTP Request
 `GET api/newsSize/{newsSize}/edit`
@@ -4038,7 +2895,7 @@ curl -X PUT \
     "http://localhost/api/newsSize/1" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"size":"et"}'
+    -d '{"size":"aperiam"}'
 
 ```
 
@@ -4053,7 +2910,7 @@ let headers = {
 };
 
 let body = {
-    "size": "et"
+    "size": "aperiam"
 }
 
 fetch(url, {
@@ -4151,86 +3008,11 @@ fetch(url, {
 ```
 
 
-> Example response (200):
+> Example response (429):
 
 ```json
 {
-    "message": "Relações entre notícias e tópicos",
-    "data": [
-        {
-            "id": 1,
-            "news_id": 1,
-            "topic_id": 55,
-            "created_at": "2020-01-27 11:12:44",
-            "updated_at": "2020-01-27 11:12:44",
-            "deleted_at": null
-        },
-        {
-            "id": 2,
-            "news_id": 1,
-            "topic_id": 27,
-            "created_at": "2020-01-27 11:12:44",
-            "updated_at": "2020-01-27 11:12:44",
-            "deleted_at": null
-        },
-        {
-            "id": 3,
-            "news_id": 2,
-            "topic_id": 14,
-            "created_at": "2020-01-27 11:12:44",
-            "updated_at": "2020-01-27 11:12:44",
-            "deleted_at": null
-        },
-        {
-            "id": 4,
-            "news_id": 2,
-            "topic_id": 21,
-            "created_at": "2020-01-27 11:12:44",
-            "updated_at": "2020-01-27 11:12:44",
-            "deleted_at": null
-        },
-        {
-            "id": 5,
-            "news_id": 3,
-            "topic_id": 8,
-            "created_at": "2020-01-27 11:12:44",
-            "updated_at": "2020-01-27 11:12:44",
-            "deleted_at": null
-        },
-        {
-            "id": 6,
-            "news_id": 3,
-            "topic_id": 1,
-            "created_at": "2020-01-27 11:12:44",
-            "updated_at": "2020-01-27 11:12:44",
-            "deleted_at": null
-        },
-        {
-            "id": 7,
-            "news_id": 4,
-            "topic_id": 66,
-            "created_at": "2020-01-27 11:12:44",
-            "updated_at": "2020-01-27 11:12:44",
-            "deleted_at": null
-        },
-        {
-            "id": 8,
-            "news_id": 4,
-            "topic_id": 26,
-            "created_at": "2020-01-27 11:12:44",
-            "updated_at": "2020-01-27 11:12:44",
-            "deleted_at": null
-        },
-        {
-            "id": 9,
-            "news_id": 5,
-            "topic_id": 19,
-            "created_at": "2020-01-27 11:12:44",
-            "updated_at": "2020-01-27 11:12:44",
-            "deleted_at": null
-        }
-    ],
-    "result": "ok"
+    "message": "Too Many Attempts."
 }
 ```
 
@@ -4271,6 +3053,13 @@ fetch(url, {
 ```
 
 
+> Example response (429):
+
+```json
+{
+    "message": "Too Many Attempts."
+}
+```
 
 ### HTTP Request
 `GET api/newsTopic/create`
@@ -4288,7 +3077,7 @@ curl -X POST \
     "http://localhost/api/newsTopic" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"news_id":16,"topic_id":10}'
+    -d '{"news_id":10,"topic_id":16}'
 
 ```
 
@@ -4303,8 +3092,8 @@ let headers = {
 };
 
 let body = {
-    "news_id": 16,
-    "topic_id": 10
+    "news_id": 10,
+    "topic_id": 16
 }
 
 fetch(url, {
@@ -4360,19 +3149,11 @@ fetch(url, {
 ```
 
 
-> Example response (422):
+> Example response (429):
 
 ```json
 {
-    "data": {
-        "news_id": [
-            "Associe uma notícia!"
-        ],
-        "topic_id": [
-            "Associe um topico!"
-        ]
-    },
-    "msg": "Erro de validação."
+    "message": "Too Many Attempts."
 }
 ```
 
@@ -4392,7 +3173,7 @@ curl -X GET \
     -G "http://localhost/api/newsTopic/1/edit" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"news_id":14,"topic_id":18}'
+    -d '{"news_id":15,"topic_id":6}'
 
 ```
 
@@ -4407,8 +3188,8 @@ let headers = {
 };
 
 let body = {
-    "news_id": 14,
-    "topic_id": 18
+    "news_id": 15,
+    "topic_id": 6
 }
 
 fetch(url, {
@@ -4421,6 +3202,13 @@ fetch(url, {
 ```
 
 
+> Example response (429):
+
+```json
+{
+    "message": "Too Many Attempts."
+}
+```
 
 ### HTTP Request
 `GET api/newsTopic/{newsTopic}/edit`
@@ -4443,7 +3231,7 @@ curl -X PUT \
     "http://localhost/api/newsTopic/1" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"news_id":14,"topic_id":7}'
+    -d '{"news_id":5,"topic_id":16}'
 
 ```
 
@@ -4458,8 +3246,8 @@ let headers = {
 };
 
 let body = {
-    "news_id": 14,
-    "topic_id": 7
+    "news_id": 5,
+    "topic_id": 16
 }
 
 fetch(url, {
@@ -4558,59 +3346,11 @@ fetch(url, {
 ```
 
 
-> Example response (200):
+> Example response (429):
 
 ```json
 {
-    "message": "Lista de relações entre Notícias e Users",
-    "data": [
-        {
-            "id": 1,
-            "news_id": 1,
-            "user_id": 5,
-            "created_at": "2020-01-27 11:12:42",
-            "updated_at": "2020-01-27 11:12:42",
-            "deleted_at": null,
-            "collection_id": 5
-        },
-        {
-            "id": 2,
-            "news_id": 2,
-            "user_id": 6,
-            "created_at": "2020-01-27 11:12:42",
-            "updated_at": "2020-01-27 11:12:42",
-            "deleted_at": null,
-            "collection_id": 6
-        },
-        {
-            "id": 3,
-            "news_id": 3,
-            "user_id": 7,
-            "created_at": "2020-01-27 11:12:42",
-            "updated_at": "2020-01-27 11:12:42",
-            "deleted_at": null,
-            "collection_id": 7
-        },
-        {
-            "id": 4,
-            "news_id": 4,
-            "user_id": 4,
-            "created_at": "2020-01-27 11:12:43",
-            "updated_at": "2020-01-27 11:12:43",
-            "deleted_at": null,
-            "collection_id": 4
-        },
-        {
-            "id": 5,
-            "news_id": 5,
-            "user_id": 3,
-            "created_at": "2020-01-27 11:12:43",
-            "updated_at": "2020-01-27 11:12:43",
-            "deleted_at": null,
-            "collection_id": 3
-        }
-    ],
-    "result": "ok"
+    "message": "Too Many Attempts."
 }
 ```
 
@@ -4651,6 +3391,13 @@ fetch(url, {
 ```
 
 
+> Example response (429):
+
+```json
+{
+    "message": "Too Many Attempts."
+}
+```
 
 ### HTTP Request
 `GET api/newsUser/create`
@@ -4668,7 +3415,7 @@ curl -X POST \
     "http://localhost/api/newsUser" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"news_id":15,"user_id":7,"collection_id":11}'
+    -d '{"news_id":5,"user_id":4,"collection_id":18}'
 
 ```
 
@@ -4683,9 +3430,9 @@ let headers = {
 };
 
 let body = {
-    "news_id": 15,
-    "user_id": 7,
-    "collection_id": 11
+    "news_id": 5,
+    "user_id": 4,
+    "collection_id": 18
 }
 
 fetch(url, {
@@ -4742,17 +3489,11 @@ fetch(url, {
 ```
 
 
-> Example response (200):
+> Example response (429):
 
 ```json
 {
-    "id": 1,
-    "news_id": 1,
-    "user_id": 5,
-    "created_at": "2020-01-27 11:12:42",
-    "updated_at": "2020-01-27 11:12:42",
-    "deleted_at": null,
-    "collection_id": 5
+    "message": "Too Many Attempts."
 }
 ```
 
@@ -4793,6 +3534,13 @@ fetch(url, {
 ```
 
 
+> Example response (429):
+
+```json
+{
+    "message": "Too Many Attempts."
+}
+```
 
 ### HTTP Request
 `GET api/newsUser/{newsUser}/edit`
@@ -4810,7 +3558,7 @@ curl -X PUT \
     "http://localhost/api/newsUser/1" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"news_id":12,"user_id":3,"collection_id":13}'
+    -d '{"news_id":15,"user_id":6,"collection_id":18}'
 
 ```
 
@@ -4825,9 +3573,9 @@ let headers = {
 };
 
 let body = {
-    "news_id": 12,
-    "user_id": 3,
-    "collection_id": 13
+    "news_id": 15,
+    "user_id": 6,
+    "collection_id": 18
 }
 
 fetch(url, {
@@ -4927,63 +3675,11 @@ fetch(url, {
 ```
 
 
-> Example response (200):
+> Example response (429):
 
 ```json
 {
-    "message": "Lista de publicações",
-    "data": [
-        {
-            "id": 1,
-            "name": "Público",
-            "created_at": "2020-01-27 11:12:16",
-            "updated_at": "2020-01-27 11:12:16",
-            "deleted_at": null
-        },
-        {
-            "id": 2,
-            "name": "P2",
-            "created_at": "2020-01-27 11:12:16",
-            "updated_at": "2020-01-27 11:12:16",
-            "deleted_at": null
-        },
-        {
-            "id": 3,
-            "name": "Ípsilon",
-            "created_at": "2020-01-27 11:12:16",
-            "updated_at": "2020-01-27 11:12:16",
-            "deleted_at": null
-        },
-        {
-            "id": 4,
-            "name": "Ímpar",
-            "created_at": "2020-01-27 11:12:16",
-            "updated_at": "2020-01-27 11:12:16",
-            "deleted_at": null
-        },
-        {
-            "id": 5,
-            "name": "Fugas",
-            "created_at": "2020-01-27 11:12:16",
-            "updated_at": "2020-01-27 11:12:16",
-            "deleted_at": null
-        },
-        {
-            "id": 6,
-            "name": "P3",
-            "created_at": "2020-01-27 11:12:16",
-            "updated_at": "2020-01-27 11:12:16",
-            "deleted_at": null
-        },
-        {
-            "id": 7,
-            "name": "Cinecartaz",
-            "created_at": "2020-01-27 11:12:16",
-            "updated_at": "2020-01-27 11:12:16",
-            "deleted_at": null
-        }
-    ],
-    "result": "ok"
+    "message": "Too Many Attempts."
 }
 ```
 
@@ -5024,6 +3720,13 @@ fetch(url, {
 ```
 
 
+> Example response (429):
+
+```json
+{
+    "message": "Too Many Attempts."
+}
+```
 
 ### HTTP Request
 `GET api/publication/create`
@@ -5041,7 +3744,7 @@ curl -X POST \
     "http://localhost/api/publication" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"name":"assumenda"}'
+    -d '{"name":"est"}'
 
 ```
 
@@ -5056,7 +3759,7 @@ let headers = {
 };
 
 let body = {
-    "name": "assumenda"
+    "name": "est"
 }
 
 fetch(url, {
@@ -5111,19 +3814,11 @@ fetch(url, {
 ```
 
 
-> Example response (200):
+> Example response (429):
 
 ```json
 {
-    "message": "Publicação selecionada",
-    "data": {
-        "id": 1,
-        "name": "Público",
-        "created_at": "2020-01-27 11:12:16",
-        "updated_at": "2020-01-27 11:12:16",
-        "deleted_at": null
-    },
-    "result": "ok"
+    "message": "Too Many Attempts."
 }
 ```
 
@@ -5164,6 +3859,13 @@ fetch(url, {
 ```
 
 
+> Example response (429):
+
+```json
+{
+    "message": "Too Many Attempts."
+}
+```
 
 ### HTTP Request
 `GET api/publication/{publication}/edit`
@@ -5181,7 +3883,7 @@ curl -X PUT \
     "http://localhost/api/publication/1" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"name":"dolores"}'
+    -d '{"name":"ad"}'
 
 ```
 
@@ -5196,7 +3898,7 @@ let headers = {
 };
 
 let body = {
-    "name": "dolores"
+    "name": "ad"
 }
 
 fetch(url, {
@@ -5294,44 +3996,11 @@ fetch(url, {
 ```
 
 
-> Example response (200):
+> Example response (429):
 
 ```json
 {
-    "message": "Lista de Pesquisas",
-    "data": [
-        {
-            "id": 1,
-            "text": "Incêndios Florestais",
-            "image": "",
-            "user_id": 3,
-            "search_type_id": 1,
-            "created_at": "2020-01-27 11:12:36",
-            "updated_at": "2020-01-27 11:12:36",
-            "deleted_at": null
-        },
-        {
-            "id": 2,
-            "text": "África",
-            "image": "images\/searches\/africa.jpg",
-            "user_id": 4,
-            "search_type_id": 2,
-            "created_at": "2020-01-27 11:12:36",
-            "updated_at": "2020-01-27 11:12:36",
-            "deleted_at": null
-        },
-        {
-            "id": 3,
-            "text": "Imigrantes",
-            "image": "",
-            "user_id": 5,
-            "search_type_id": 3,
-            "created_at": "2020-01-27 11:12:36",
-            "updated_at": "2020-01-27 11:12:36",
-            "deleted_at": null
-        }
-    ],
-    "result": "ok"
+    "message": "Too Many Attempts."
 }
 ```
 
@@ -5372,6 +4041,13 @@ fetch(url, {
 ```
 
 
+> Example response (429):
+
+```json
+{
+    "message": "Too Many Attempts."
+}
+```
 
 ### HTTP Request
 `GET api/search/create`
@@ -5389,7 +4065,7 @@ curl -X POST \
     "http://localhost/api/search" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"text":"et","image":"aut","user_id":20,"search_type_id":7}'
+    -d '{"text":"in","image":"omnis","user_id":3,"search_type_id":11}'
 
 ```
 
@@ -5404,10 +4080,10 @@ let headers = {
 };
 
 let body = {
-    "text": "et",
-    "image": "aut",
-    "user_id": 20,
-    "search_type_id": 7
+    "text": "in",
+    "image": "omnis",
+    "user_id": 3,
+    "search_type_id": 11
 }
 
 fetch(url, {
@@ -5465,22 +4141,11 @@ fetch(url, {
 ```
 
 
-> Example response (200):
+> Example response (429):
 
 ```json
 {
-    "message": "Autor selecionado",
-    "data": {
-        "id": 1,
-        "text": "Incêndios Florestais",
-        "image": "",
-        "user_id": 3,
-        "search_type_id": 1,
-        "created_at": "2020-01-27 11:12:36",
-        "updated_at": "2020-01-27 11:12:36",
-        "deleted_at": null
-    },
-    "result": "ok"
+    "message": "Too Many Attempts."
 }
 ```
 
@@ -5521,6 +4186,13 @@ fetch(url, {
 ```
 
 
+> Example response (429):
+
+```json
+{
+    "message": "Too Many Attempts."
+}
+```
 
 ### HTTP Request
 `GET api/search/{search}/edit`
@@ -5538,7 +4210,7 @@ curl -X PUT \
     "http://localhost/api/search/1" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"text":"occaecati","image":"et","user_id":8,"search_type_id":1}'
+    -d '{"text":"et","image":"sit","user_id":7,"search_type_id":17}'
 
 ```
 
@@ -5553,10 +4225,10 @@ let headers = {
 };
 
 let body = {
-    "text": "occaecati",
-    "image": "et",
-    "user_id": 8,
-    "search_type_id": 1
+    "text": "et",
+    "image": "sit",
+    "user_id": 7,
+    "search_type_id": 17
 }
 
 fetch(url, {
@@ -5657,35 +4329,11 @@ fetch(url, {
 ```
 
 
-> Example response (200):
+> Example response (429):
 
 ```json
 {
-    "message": "Lista de Tipos de Pesquisa",
-    "data": [
-        {
-            "id": 1,
-            "type": "Escrever",
-            "created_at": "2020-01-27 11:12:17",
-            "updated_at": "2020-01-27 11:12:17",
-            "deleted_at": null
-        },
-        {
-            "id": 2,
-            "type": "Fotografia",
-            "created_at": "2020-01-27 11:12:17",
-            "updated_at": "2020-01-27 11:12:17",
-            "deleted_at": null
-        },
-        {
-            "id": 3,
-            "type": "Voz",
-            "created_at": "2020-01-27 11:12:17",
-            "updated_at": "2020-01-27 11:12:17",
-            "deleted_at": null
-        }
-    ],
-    "result": "ok"
+    "message": "Too Many Attempts."
 }
 ```
 
@@ -5726,6 +4374,13 @@ fetch(url, {
 ```
 
 
+> Example response (429):
+
+```json
+{
+    "message": "Too Many Attempts."
+}
+```
 
 ### HTTP Request
 `GET api/searchType/create`
@@ -5743,7 +4398,7 @@ curl -X POST \
     "http://localhost/api/searchType" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"type":"quis"}'
+    -d '{"type":"eos"}'
 
 ```
 
@@ -5758,7 +4413,7 @@ let headers = {
 };
 
 let body = {
-    "type": "quis"
+    "type": "eos"
 }
 
 fetch(url, {
@@ -5813,19 +4468,11 @@ fetch(url, {
 ```
 
 
-> Example response (200):
+> Example response (429):
 
 ```json
 {
-    "message": "Tipo de pesquisa selecionada",
-    "data": {
-        "id": 1,
-        "type": "Escrever",
-        "created_at": "2020-01-27 11:12:17",
-        "updated_at": "2020-01-27 11:12:17",
-        "deleted_at": null
-    },
-    "result": "ok"
+    "message": "Too Many Attempts."
 }
 ```
 
@@ -5866,6 +4513,13 @@ fetch(url, {
 ```
 
 
+> Example response (429):
+
+```json
+{
+    "message": "Too Many Attempts."
+}
+```
 
 ### HTTP Request
 `GET api/searchType/{searchType}/edit`
@@ -5883,7 +4537,7 @@ curl -X PUT \
     "http://localhost/api/searchType/1" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"type":"non"}'
+    -d '{"type":"eius"}'
 
 ```
 
@@ -5898,7 +4552,7 @@ let headers = {
 };
 
 let body = {
-    "type": "non"
+    "type": "eius"
 }
 
 fetch(url, {
@@ -5996,483 +4650,11 @@ fetch(url, {
 ```
 
 
-> Example response (200):
+> Example response (429):
 
 ```json
 {
-    "message": "Lista de Tópicos",
-    "data": [
-        {
-            "id": 1,
-            "topic": "PSD",
-            "created_at": "2020-01-27 11:12:18",
-            "updated_at": "2020-01-27 11:12:18",
-            "deleted_at": null
-        },
-        {
-            "id": 2,
-            "topic": "PCD",
-            "created_at": "2020-01-27 11:12:18",
-            "updated_at": "2020-01-27 11:12:18",
-            "deleted_at": null
-        },
-        {
-            "id": 3,
-            "topic": "PS",
-            "created_at": "2020-01-27 11:12:19",
-            "updated_at": "2020-01-27 11:12:19",
-            "deleted_at": null
-        },
-        {
-            "id": 4,
-            "topic": "CDS-PP",
-            "created_at": "2020-01-27 11:12:19",
-            "updated_at": "2020-01-27 11:12:19",
-            "deleted_at": null
-        },
-        {
-            "id": 5,
-            "topic": "BE",
-            "created_at": "2020-01-27 11:12:19",
-            "updated_at": "2020-01-27 11:12:19",
-            "deleted_at": null
-        },
-        {
-            "id": 6,
-            "topic": "Educação",
-            "created_at": "2020-01-27 11:12:19",
-            "updated_at": "2020-01-27 11:12:19",
-            "deleted_at": null
-        },
-        {
-            "id": 7,
-            "topic": "Saúde",
-            "created_at": "2020-01-27 11:12:19",
-            "updated_at": "2020-01-27 11:12:19",
-            "deleted_at": null
-        },
-        {
-            "id": 8,
-            "topic": "Justiça",
-            "created_at": "2020-01-27 11:12:19",
-            "updated_at": "2020-01-27 11:12:19",
-            "deleted_at": null
-        },
-        {
-            "id": 9,
-            "topic": "Media",
-            "created_at": "2020-01-27 11:12:19",
-            "updated_at": "2020-01-27 11:12:19",
-            "deleted_at": null
-        },
-        {
-            "id": 10,
-            "topic": "Lisboa",
-            "created_at": "2020-01-27 11:12:19",
-            "updated_at": "2020-01-27 11:12:19",
-            "deleted_at": null
-        },
-        {
-            "id": 11,
-            "topic": "Porto",
-            "created_at": "2020-01-27 11:12:19",
-            "updated_at": "2020-01-27 11:12:19",
-            "deleted_at": null
-        },
-        {
-            "id": 12,
-            "topic": "Cidades",
-            "created_at": "2020-01-27 11:12:19",
-            "updated_at": "2020-01-27 11:12:19",
-            "deleted_at": null
-        },
-        {
-            "id": 13,
-            "topic": "Mercados",
-            "created_at": "2020-01-27 11:12:19",
-            "updated_at": "2020-01-27 11:12:19",
-            "deleted_at": null
-        },
-        {
-            "id": 14,
-            "topic": "Empresas",
-            "created_at": "2020-01-27 11:12:19",
-            "updated_at": "2020-01-27 11:12:19",
-            "deleted_at": null
-        },
-        {
-            "id": 15,
-            "topic": "Banca",
-            "created_at": "2020-01-27 11:12:19",
-            "updated_at": "2020-01-27 11:12:19",
-            "deleted_at": null
-        },
-        {
-            "id": 16,
-            "topic": "Trabalhos e Emprego",
-            "created_at": "2020-01-27 11:12:19",
-            "updated_at": "2020-01-27 11:12:19",
-            "deleted_at": null
-        },
-        {
-            "id": 17,
-            "topic": "Conjuntura",
-            "created_at": "2020-01-27 11:12:20",
-            "updated_at": "2020-01-27 11:12:20",
-            "deleted_at": null
-        },
-        {
-            "id": 18,
-            "topic": "Finanças Públicas",
-            "created_at": "2020-01-27 11:12:20",
-            "updated_at": "2020-01-27 11:12:20",
-            "deleted_at": null
-        },
-        {
-            "id": 19,
-            "topic": "Internacional",
-            "created_at": "2020-01-27 11:12:20",
-            "updated_at": "2020-01-27 11:12:20",
-            "deleted_at": null
-        },
-        {
-            "id": 20,
-            "topic": "Empreendedorismo",
-            "created_at": "2020-01-27 11:12:20",
-            "updated_at": "2020-01-27 11:12:20",
-            "deleted_at": null
-        },
-        {
-            "id": 21,
-            "topic": "Europa",
-            "created_at": "2020-01-27 11:12:20",
-            "updated_at": "2020-01-27 11:12:20",
-            "deleted_at": null
-        },
-        {
-            "id": 22,
-            "topic": "América",
-            "created_at": "2020-01-27 11:12:20",
-            "updated_at": "2020-01-27 11:12:20",
-            "deleted_at": null
-        },
-        {
-            "id": 23,
-            "topic": "África",
-            "created_at": "2020-01-27 11:12:20",
-            "updated_at": "2020-01-27 11:12:20",
-            "deleted_at": null
-        },
-        {
-            "id": 24,
-            "topic": "Ásia",
-            "created_at": "2020-01-27 11:12:20",
-            "updated_at": "2020-01-27 11:12:20",
-            "deleted_at": null
-        },
-        {
-            "id": 25,
-            "topic": "Médio Oriente",
-            "created_at": "2020-01-27 11:12:20",
-            "updated_at": "2020-01-27 11:12:20",
-            "deleted_at": null
-        },
-        {
-            "id": 26,
-            "topic": "Oceânia",
-            "created_at": "2020-01-27 11:12:20",
-            "updated_at": "2020-01-27 11:12:20",
-            "deleted_at": null
-        },
-        {
-            "id": 27,
-            "topic": "Música",
-            "created_at": "2020-01-27 11:12:20",
-            "updated_at": "2020-01-27 11:12:20",
-            "deleted_at": null
-        },
-        {
-            "id": 28,
-            "topic": "Cinema",
-            "created_at": "2020-01-27 11:12:20",
-            "updated_at": "2020-01-27 11:12:20",
-            "deleted_at": null
-        },
-        {
-            "id": 29,
-            "topic": "Teatro",
-            "created_at": "2020-01-27 11:12:20",
-            "updated_at": "2020-01-27 11:12:20",
-            "deleted_at": null
-        },
-        {
-            "id": 30,
-            "topic": "Dança",
-            "created_at": "2020-01-27 11:12:20",
-            "updated_at": "2020-01-27 11:12:20",
-            "deleted_at": null
-        },
-        {
-            "id": 31,
-            "topic": "Livros",
-            "created_at": "2020-01-27 11:12:20",
-            "updated_at": "2020-01-27 11:12:20",
-            "deleted_at": null
-        },
-        {
-            "id": 32,
-            "topic": "Artes",
-            "created_at": "2020-01-27 11:12:20",
-            "updated_at": "2020-01-27 11:12:20",
-            "deleted_at": null
-        },
-        {
-            "id": 33,
-            "topic": "Arquitetura",
-            "created_at": "2020-01-27 11:12:20",
-            "updated_at": "2020-01-27 11:12:20",
-            "deleted_at": null
-        },
-        {
-            "id": 34,
-            "topic": "Design",
-            "created_at": "2020-01-27 11:12:20",
-            "updated_at": "2020-01-27 11:12:20",
-            "deleted_at": null
-        },
-        {
-            "id": 35,
-            "topic": "TV",
-            "created_at": "2020-01-27 11:12:20",
-            "updated_at": "2020-01-27 11:12:20",
-            "deleted_at": null
-        },
-        {
-            "id": 36,
-            "topic": "SL Benfica",
-            "created_at": "2020-01-27 11:12:20",
-            "updated_at": "2020-01-27 11:12:20",
-            "deleted_at": null
-        },
-        {
-            "id": 37,
-            "topic": "FC Porto",
-            "created_at": "2020-01-27 11:12:21",
-            "updated_at": "2020-01-27 11:12:21",
-            "deleted_at": null
-        },
-        {
-            "id": 38,
-            "topic": "Futebol Internacional",
-            "created_at": "2020-01-27 11:12:21",
-            "updated_at": "2020-01-27 11:12:21",
-            "deleted_at": null
-        },
-        {
-            "id": 39,
-            "topic": "Futebol Nacional",
-            "created_at": "2020-01-27 11:12:21",
-            "updated_at": "2020-01-27 11:12:21",
-            "deleted_at": null
-        },
-        {
-            "id": 40,
-            "topic": "Râguebi",
-            "created_at": "2020-01-27 11:12:21",
-            "updated_at": "2020-01-27 11:12:21",
-            "deleted_at": null
-        },
-        {
-            "id": 41,
-            "topic": "Ténis",
-            "created_at": "2020-01-27 11:12:21",
-            "updated_at": "2020-01-27 11:12:21",
-            "deleted_at": null
-        },
-        {
-            "id": 42,
-            "topic": "Motores",
-            "created_at": "2020-01-27 11:12:21",
-            "updated_at": "2020-01-27 11:12:21",
-            "deleted_at": null
-        },
-        {
-            "id": 43,
-            "topic": "Golfe",
-            "created_at": "2020-01-27 11:12:21",
-            "updated_at": "2020-01-27 11:12:21",
-            "deleted_at": null
-        },
-        {
-            "id": 44,
-            "topic": "Running",
-            "created_at": "2020-01-27 11:12:21",
-            "updated_at": "2020-01-27 11:12:21",
-            "deleted_at": null
-        },
-        {
-            "id": 45,
-            "topic": "Outras Modalidades",
-            "created_at": "2020-01-27 11:12:21",
-            "updated_at": "2020-01-27 11:12:21",
-            "deleted_at": null
-        },
-        {
-            "id": 46,
-            "topic": "Ambiente",
-            "created_at": "2020-01-27 11:12:21",
-            "updated_at": "2020-01-27 11:12:21",
-            "deleted_at": null
-        },
-        {
-            "id": 47,
-            "topic": "Espaço",
-            "created_at": "2020-01-27 11:12:21",
-            "updated_at": "2020-01-27 11:12:21",
-            "deleted_at": null
-        },
-        {
-            "id": 48,
-            "topic": "Medicina",
-            "created_at": "2020-01-27 11:12:21",
-            "updated_at": "2020-01-27 11:12:21",
-            "deleted_at": null
-        },
-        {
-            "id": 49,
-            "topic": "Redes Sociais",
-            "created_at": "2020-01-27 11:12:21",
-            "updated_at": "2020-01-27 11:12:21",
-            "deleted_at": null
-        },
-        {
-            "id": 50,
-            "topic": "Privacidade",
-            "created_at": "2020-01-27 11:12:21",
-            "updated_at": "2020-01-27 11:12:21",
-            "deleted_at": null
-        },
-        {
-            "id": 51,
-            "topic": "Inteligência Artificial",
-            "created_at": "2020-01-27 11:12:21",
-            "updated_at": "2020-01-27 11:12:21",
-            "deleted_at": null
-        },
-        {
-            "id": 52,
-            "topic": "Telemóvies",
-            "created_at": "2020-01-27 11:12:21",
-            "updated_at": "2020-01-27 11:12:21",
-            "deleted_at": null
-        },
-        {
-            "id": 53,
-            "topic": "Google",
-            "created_at": "2020-01-27 11:12:21",
-            "updated_at": "2020-01-27 11:12:21",
-            "deleted_at": null
-        },
-        {
-            "id": 54,
-            "topic": "Facebook",
-            "created_at": "2020-01-27 11:12:21",
-            "updated_at": "2020-01-27 11:12:21",
-            "deleted_at": null
-        },
-        {
-            "id": 55,
-            "topic": "Opinião",
-            "created_at": "2020-01-27 11:12:22",
-            "updated_at": "2020-01-27 11:12:22",
-            "deleted_at": null
-        },
-        {
-            "id": 56,
-            "topic": "Editorial",
-            "created_at": "2020-01-27 11:12:22",
-            "updated_at": "2020-01-27 11:12:22",
-            "deleted_at": null
-        },
-        {
-            "id": 57,
-            "topic": "Crónica",
-            "created_at": "2020-01-27 11:12:22",
-            "updated_at": "2020-01-27 11:12:22",
-            "deleted_at": null
-        },
-        {
-            "id": 58,
-            "topic": "Internet",
-            "created_at": "2020-01-27 11:12:22",
-            "updated_at": "2020-01-27 11:12:22",
-            "deleted_at": null
-        },
-        {
-            "id": 59,
-            "topic": "Tecnologia",
-            "created_at": "2020-01-27 11:12:22",
-            "updated_at": "2020-01-27 11:12:22",
-            "deleted_at": null
-        },
-        {
-            "id": 60,
-            "topic": "Tendências Globais",
-            "created_at": "2020-01-27 11:12:22",
-            "updated_at": "2020-01-27 11:12:22",
-            "deleted_at": null
-        },
-        {
-            "id": 61,
-            "topic": "Cibersegurança",
-            "created_at": "2020-01-27 11:12:22",
-            "updated_at": "2020-01-27 11:12:22",
-            "deleted_at": null
-        },
-        {
-            "id": 62,
-            "topic": "Greve",
-            "created_at": "2020-01-27 11:12:22",
-            "updated_at": "2020-01-27 11:12:22",
-            "deleted_at": null
-        },
-        {
-            "id": 63,
-            "topic": "Ano Novo",
-            "created_at": "2020-01-27 11:12:22",
-            "updated_at": "2020-01-27 11:12:22",
-            "deleted_at": null
-        },
-        {
-            "id": 64,
-            "topic": "Coimbra",
-            "created_at": "2020-01-27 11:12:22",
-            "updated_at": "2020-01-27 11:12:22",
-            "deleted_at": null
-        },
-        {
-            "id": 65,
-            "topic": "Dinheiro",
-            "created_at": "2020-01-27 11:12:22",
-            "updated_at": "2020-01-27 11:12:22",
-            "deleted_at": null
-        },
-        {
-            "id": 66,
-            "topic": "Incêndios Florestais",
-            "created_at": "2020-01-27 11:12:22",
-            "updated_at": "2020-01-27 11:12:22",
-            "deleted_at": null
-        },
-        {
-            "id": 67,
-            "topic": "Itália",
-            "created_at": "2020-01-27 11:12:22",
-            "updated_at": "2020-01-27 11:12:22",
-            "deleted_at": null
-        }
-    ],
-    "result": "ok"
+    "message": "Too Many Attempts."
 }
 ```
 
@@ -6513,6 +4695,13 @@ fetch(url, {
 ```
 
 
+> Example response (429):
+
+```json
+{
+    "message": "Too Many Attempts."
+}
+```
 
 ### HTTP Request
 `GET api/topic/create`
@@ -6530,7 +4719,7 @@ curl -X POST \
     "http://localhost/api/topic" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"topic":"et"}'
+    -d '{"topic":"quaerat"}'
 
 ```
 
@@ -6545,7 +4734,7 @@ let headers = {
 };
 
 let body = {
-    "topic": "et"
+    "topic": "quaerat"
 }
 
 fetch(url, {
@@ -6600,19 +4789,11 @@ fetch(url, {
 ```
 
 
-> Example response (200):
+> Example response (429):
 
 ```json
 {
-    "message": "Tópico selecionado",
-    "data": {
-        "id": 1,
-        "topic": "PSD",
-        "created_at": "2020-01-27 11:12:18",
-        "updated_at": "2020-01-27 11:12:18",
-        "deleted_at": null
-    },
-    "result": "ok"
+    "message": "Too Many Attempts."
 }
 ```
 
@@ -6653,6 +4834,13 @@ fetch(url, {
 ```
 
 
+> Example response (429):
+
+```json
+{
+    "message": "Too Many Attempts."
+}
+```
 
 ### HTTP Request
 `GET api/topic/{topic}/edit`
@@ -6670,7 +4858,7 @@ curl -X PUT \
     "http://localhost/api/topic/1" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"topic":"voluptates"}'
+    -d '{"topic":"provident"}'
 
 ```
 
@@ -6685,7 +4873,7 @@ let headers = {
 };
 
 let body = {
-    "topic": "voluptates"
+    "topic": "provident"
 }
 
 fetch(url, {
@@ -6752,393 +4940,21 @@ fetch(url, {
 #User
 
 
-<!-- START_fc1e4f6a697e3c48257de845299b71d5 -->
-## Display a listing of the users.
-
-> Example request:
-
-```bash
-curl -X GET \
-    -G "http://localhost/api/users" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json"
-```
-
-```javascript
-const url = new URL(
-    "http://localhost/api/users"
-);
-
-let headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-fetch(url, {
-    method: "GET",
-    headers: headers,
-})
-    .then(response => response.json())
-    .then(json => console.log(json));
-```
-
-
-> Example response (200):
-
-```json
-{
-    "message": "Lista de Users",
-    "data": [
-        {
-            "id": 1,
-            "username": "Administrator",
-            "image": "images\/users\/admin.jpg",
-            "email": "admin@tdi.pt",
-            "email_verified_at": null,
-            "role_id": 1,
-            "news_size_id": 2,
-            "created_at": "2020-01-27 11:12:29",
-            "updated_at": "2020-01-27 11:12:29",
-            "deleted_at": null
-        },
-        {
-            "id": 2,
-            "username": "Manager",
-            "image": "images\/users\/manager.jpg",
-            "email": "manager@tdi.pt",
-            "email_verified_at": null,
-            "role_id": 2,
-            "news_size_id": 3,
-            "created_at": "2020-01-27 11:12:30",
-            "updated_at": "2020-01-27 11:12:30",
-            "deleted_at": null
-        },
-        {
-            "id": 3,
-            "username": "Miguel Esteves Cardoso",
-            "image": "images\/users\/miguel.jpg",
-            "email": "opiniao@publico.pt",
-            "email_verified_at": null,
-            "role_id": 2,
-            "news_size_id": 3,
-            "created_at": "2020-01-27 11:12:30",
-            "updated_at": "2020-01-27 11:12:30",
-            "deleted_at": null
-        },
-        {
-            "id": 4,
-            "username": "Victor Ferreira",
-            "image": "images\/users\/victor.jpg",
-            "email": "voferreira@publico.pt",
-            "email_verified_at": null,
-            "role_id": 2,
-            "news_size_id": 2,
-            "created_at": "2020-01-27 11:12:30",
-            "updated_at": "2020-01-27 11:12:30",
-            "deleted_at": null
-        },
-        {
-            "id": 5,
-            "username": "Leonete Botelho ",
-            "image": "images\/users\/botelho.jpg",
-            "email": "lbotelho@publico.pt",
-            "email_verified_at": null,
-            "role_id": 2,
-            "news_size_id": 3,
-            "created_at": "2020-01-27 11:12:31",
-            "updated_at": "2020-01-27 11:12:31",
-            "deleted_at": null
-        },
-        {
-            "id": 6,
-            "username": "Patrícia Carvalho",
-            "image": "images\/users\/patricia.jpg",
-            "email": "patricia.carvalho@publico.pt",
-            "email_verified_at": null,
-            "role_id": 2,
-            "news_size_id": 2,
-            "created_at": "2020-01-27 11:12:31",
-            "updated_at": "2020-01-27 11:12:31",
-            "deleted_at": null
-        },
-        {
-            "id": 7,
-            "username": "Sofia Neves",
-            "image": "images\/users\/sofia.jpg",
-            "email": "sofia.neves@publico.pt",
-            "email_verified_at": null,
-            "role_id": 2,
-            "news_size_id": 2,
-            "created_at": "2020-01-27 11:12:31",
-            "updated_at": "2020-01-27 11:12:31",
-            "deleted_at": null
-        },
-        {
-            "id": 8,
-            "username": "Aisha Ferry",
-            "image": "images\/users\/users.jpg",
-            "email": "hobart31@example.net",
-            "email_verified_at": "2020-01-27 11:12:31",
-            "role_id": 3,
-            "news_size_id": 2,
-            "created_at": "2020-01-27 11:12:31",
-            "updated_at": "2020-01-27 11:12:31",
-            "deleted_at": null
-        },
-        {
-            "id": 9,
-            "username": "Candice Von",
-            "image": "images\/users\/users.jpg",
-            "email": "german08@example.org",
-            "email_verified_at": "2020-01-27 11:12:31",
-            "role_id": 3,
-            "news_size_id": 3,
-            "created_at": "2020-01-27 11:12:31",
-            "updated_at": "2020-01-27 11:12:31",
-            "deleted_at": null
-        },
-        {
-            "id": 10,
-            "username": "Dr. Amparo Sipes",
-            "image": "images\/users\/users.jpg",
-            "email": "mosciski.orval@example.org",
-            "email_verified_at": "2020-01-27 11:12:31",
-            "role_id": 3,
-            "news_size_id": 3,
-            "created_at": "2020-01-27 11:12:31",
-            "updated_at": "2020-01-27 11:12:31",
-            "deleted_at": null
-        },
-        {
-            "id": 11,
-            "username": "Alvis Gislason",
-            "image": "images\/users\/users.jpg",
-            "email": "bud40@example.org",
-            "email_verified_at": "2020-01-27 11:12:31",
-            "role_id": 3,
-            "news_size_id": 2,
-            "created_at": "2020-01-27 11:12:31",
-            "updated_at": "2020-01-27 11:12:31",
-            "deleted_at": null
-        },
-        {
-            "id": 12,
-            "username": "Odessa Skiles",
-            "image": "images\/users\/users.jpg",
-            "email": "mertz.verlie@example.net",
-            "email_verified_at": "2020-01-27 11:12:31",
-            "role_id": 3,
-            "news_size_id": 3,
-            "created_at": "2020-01-27 11:12:31",
-            "updated_at": "2020-01-27 11:12:31",
-            "deleted_at": null
-        },
-        {
-            "id": 13,
-            "username": "Prof. Myrtis Gaylord I",
-            "image": "images\/users\/users.jpg",
-            "email": "norma64@example.net",
-            "email_verified_at": "2020-01-27 11:12:31",
-            "role_id": 3,
-            "news_size_id": 1,
-            "created_at": "2020-01-27 11:12:31",
-            "updated_at": "2020-01-27 11:12:31",
-            "deleted_at": null
-        },
-        {
-            "id": 14,
-            "username": "Terrill Simonis",
-            "image": "images\/users\/users.jpg",
-            "email": "hintz.lily@example.org",
-            "email_verified_at": "2020-01-27 11:12:31",
-            "role_id": 3,
-            "news_size_id": 3,
-            "created_at": "2020-01-27 11:12:31",
-            "updated_at": "2020-01-27 11:12:31",
-            "deleted_at": null
-        },
-        {
-            "id": 15,
-            "username": "Mrs. Therese Haag",
-            "image": "images\/users\/users.jpg",
-            "email": "cronin.xzavier@example.org",
-            "email_verified_at": "2020-01-27 11:12:31",
-            "role_id": 3,
-            "news_size_id": 3,
-            "created_at": "2020-01-27 11:12:31",
-            "updated_at": "2020-01-27 11:12:31",
-            "deleted_at": null
-        },
-        {
-            "id": 16,
-            "username": "Ena Kozey",
-            "image": "images\/users\/users.jpg",
-            "email": "kbeier@example.com",
-            "email_verified_at": "2020-01-27 11:12:31",
-            "role_id": 3,
-            "news_size_id": 2,
-            "created_at": "2020-01-27 11:12:32",
-            "updated_at": "2020-01-27 11:12:32",
-            "deleted_at": null
-        },
-        {
-            "id": 17,
-            "username": "Timmothy Walsh",
-            "image": "images\/users\/users.jpg",
-            "email": "kailee32@example.com",
-            "email_verified_at": "2020-01-27 11:12:31",
-            "role_id": 3,
-            "news_size_id": 1,
-            "created_at": "2020-01-27 11:12:32",
-            "updated_at": "2020-01-27 11:12:32",
-            "deleted_at": null
-        },
-        {
-            "id": 18,
-            "username": "Dr. Trisha Huels",
-            "image": "images\/users\/users.jpg",
-            "email": "donnelly.gaetano@example.com",
-            "email_verified_at": "2020-01-27 11:12:31",
-            "role_id": 3,
-            "news_size_id": 1,
-            "created_at": "2020-01-27 11:12:32",
-            "updated_at": "2020-01-27 11:12:32",
-            "deleted_at": null
-        },
-        {
-            "id": 19,
-            "username": "Buck Lakin",
-            "image": "images\/users\/users.jpg",
-            "email": "hailey50@example.org",
-            "email_verified_at": "2020-01-27 11:12:31",
-            "role_id": 3,
-            "news_size_id": 3,
-            "created_at": "2020-01-27 11:12:32",
-            "updated_at": "2020-01-27 11:12:32",
-            "deleted_at": null
-        },
-        {
-            "id": 20,
-            "username": "Theresia Greenfelder",
-            "image": "images\/users\/users.jpg",
-            "email": "ferry.hunter@example.org",
-            "email_verified_at": "2020-01-27 11:12:31",
-            "role_id": 3,
-            "news_size_id": 1,
-            "created_at": "2020-01-27 11:12:32",
-            "updated_at": "2020-01-27 11:12:32",
-            "deleted_at": null
-        },
-        {
-            "id": 21,
-            "username": "Dina Braun",
-            "image": "images\/users\/users.jpg",
-            "email": "zechariah37@example.com",
-            "email_verified_at": "2020-01-27 11:12:31",
-            "role_id": 3,
-            "news_size_id": 1,
-            "created_at": "2020-01-27 11:12:32",
-            "updated_at": "2020-01-27 11:12:32",
-            "deleted_at": null
-        },
-        {
-            "id": 22,
-            "username": "Darrell Zieme",
-            "image": "images\/users\/users.jpg",
-            "email": "donavon84@example.org",
-            "email_verified_at": "2020-01-27 11:12:31",
-            "role_id": 3,
-            "news_size_id": 3,
-            "created_at": "2020-01-27 11:12:32",
-            "updated_at": "2020-01-27 11:12:32",
-            "deleted_at": null
-        },
-        {
-            "id": 23,
-            "username": "Amira Cole",
-            "image": "images\/users\/users.jpg",
-            "email": "meggie.heidenreich@example.com",
-            "email_verified_at": "2020-01-27 11:12:31",
-            "role_id": 3,
-            "news_size_id": 2,
-            "created_at": "2020-01-27 11:12:32",
-            "updated_at": "2020-01-27 11:12:32",
-            "deleted_at": null
-        },
-        {
-            "id": 24,
-            "username": "Emmanuel Schmeler",
-            "image": "images\/users\/users.jpg",
-            "email": "katelin.beahan@example.net",
-            "email_verified_at": "2020-01-27 11:12:31",
-            "role_id": 3,
-            "news_size_id": 1,
-            "created_at": "2020-01-27 11:12:32",
-            "updated_at": "2020-01-27 11:12:32",
-            "deleted_at": null
-        },
-        {
-            "id": 25,
-            "username": "Leland Hickle",
-            "image": "images\/users\/users.jpg",
-            "email": "harvey.delbert@example.org",
-            "email_verified_at": "2020-01-27 11:12:31",
-            "role_id": 3,
-            "news_size_id": 3,
-            "created_at": "2020-01-27 11:12:32",
-            "updated_at": "2020-01-27 11:12:32",
-            "deleted_at": null
-        },
-        {
-            "id": 26,
-            "username": "Kallie Powlowski",
-            "image": "images\/users\/users.jpg",
-            "email": "vheller@example.net",
-            "email_verified_at": "2020-01-27 11:12:31",
-            "role_id": 3,
-            "news_size_id": 3,
-            "created_at": "2020-01-27 11:12:32",
-            "updated_at": "2020-01-27 11:12:32",
-            "deleted_at": null
-        },
-        {
-            "id": 27,
-            "username": "Clifford Leannon I",
-            "image": "images\/users\/users.jpg",
-            "email": "kristy.osinski@example.net",
-            "email_verified_at": "2020-01-27 11:12:31",
-            "role_id": 3,
-            "news_size_id": 2,
-            "created_at": "2020-01-27 11:12:32",
-            "updated_at": "2020-01-27 11:12:32",
-            "deleted_at": null
-        }
-    ],
-    "result": "ok"
-}
-```
-
-### HTTP Request
-`GET api/users`
-
-
-<!-- END_fc1e4f6a697e3c48257de845299b71d5 -->
-
-<!-- START_5dac10bb34c7618b018b0230d4a51648 -->
+<!-- START_7f66c974d24032cb19061d55d801f62b -->
 ## Show the form for creating a resource.
 
 > Example request:
 
 ```bash
 curl -X GET \
-    -G "http://localhost/api/users/create" \
+    -G "http://localhost/api/user/create" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost/api/users/create"
+    "http://localhost/api/user/create"
 );
 
 let headers = {
@@ -7155,30 +4971,37 @@ fetch(url, {
 ```
 
 
+> Example response (429):
+
+```json
+{
+    "message": "Too Many Attempts."
+}
+```
 
 ### HTTP Request
-`GET api/users/create`
+`GET api/user/create`
 
 
-<!-- END_5dac10bb34c7618b018b0230d4a51648 -->
+<!-- END_7f66c974d24032cb19061d55d801f62b -->
 
-<!-- START_12e37982cc5398c7100e59625ebb5514 -->
+<!-- START_f0654d3f2fc63c11f5723f233cc53c83 -->
 ## Store a newly created user in storage.
 
 > Example request:
 
 ```bash
 curl -X POST \
-    "http://localhost/api/users" \
+    "http://localhost/api/user" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"username":"possimus","email":"debitis","password":"architecto","image":"iure","role_id":2,"news_size_id":3}'
+    -d '{"username":"itaque","email":"ullam","password":"aut","image":"voluptatem","role_id":14,"news_size_id":8}'
 
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost/api/users"
+    "http://localhost/api/user"
 );
 
 let headers = {
@@ -7187,12 +5010,12 @@ let headers = {
 };
 
 let body = {
-    "username": "possimus",
-    "email": "debitis",
-    "password": "architecto",
-    "image": "iure",
-    "role_id": 2,
-    "news_size_id": 3
+    "username": "itaque",
+    "email": "ullam",
+    "password": "aut",
+    "image": "voluptatem",
+    "role_id": 14,
+    "news_size_id": 8
 }
 
 fetch(url, {
@@ -7207,7 +5030,7 @@ fetch(url, {
 
 
 ### HTTP Request
-`POST api/users`
+`POST api/user`
 
 #### Body Parameters
 Parameter | Type | Status | Description
@@ -7219,23 +5042,23 @@ Parameter | Type | Status | Description
         `role_id` | integer |  required  | Role id
         `news_size_id` | integer |  required  | News size id
     
-<!-- END_12e37982cc5398c7100e59625ebb5514 -->
+<!-- END_f0654d3f2fc63c11f5723f233cc53c83 -->
 
-<!-- START_8653614346cb0e3d444d164579a0a0a2 -->
+<!-- START_ceec0e0b1d13d731ad96603d26bccc2f -->
 ## Display the specified user.
 
 > Example request:
 
 ```bash
 curl -X GET \
-    -G "http://localhost/api/users/1" \
+    -G "http://localhost/api/user/1" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost/api/users/1"
+    "http://localhost/api/user/1"
 );
 
 let headers = {
@@ -7252,48 +5075,35 @@ fetch(url, {
 ```
 
 
-> Example response (200):
+> Example response (429):
 
 ```json
 {
-    "message": "User selecionado",
-    "data": {
-        "id": 1,
-        "username": "Administrator",
-        "image": "images\/users\/admin.jpg",
-        "email": "admin@tdi.pt",
-        "email_verified_at": null,
-        "role_id": 1,
-        "news_size_id": 2,
-        "created_at": "2020-01-27 11:12:29",
-        "updated_at": "2020-01-27 11:12:29",
-        "deleted_at": null
-    },
-    "result": "ok"
+    "message": "Too Many Attempts."
 }
 ```
 
 ### HTTP Request
-`GET api/users/{user}`
+`GET api/user/{user}`
 
 
-<!-- END_8653614346cb0e3d444d164579a0a0a2 -->
+<!-- END_ceec0e0b1d13d731ad96603d26bccc2f -->
 
-<!-- START_11ae28146a4d70ba9a0af9b65d290ad5 -->
+<!-- START_f4aa12af19ba08e1448d7eafc9f55e67 -->
 ## Show the form for editing the specified user.
 
 > Example request:
 
 ```bash
 curl -X GET \
-    -G "http://localhost/api/users/1/edit" \
+    -G "http://localhost/api/user/1/edit" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost/api/users/1/edit"
+    "http://localhost/api/user/1/edit"
 );
 
 let headers = {
@@ -7310,37 +5120,37 @@ fetch(url, {
 ```
 
 
-> Example response (500):
+> Example response (429):
 
 ```json
 {
-    "message": "Server Error"
+    "message": "Too Many Attempts."
 }
 ```
 
 ### HTTP Request
-`GET api/users/{user}/edit`
+`GET api/user/{user}/edit`
 
 
-<!-- END_11ae28146a4d70ba9a0af9b65d290ad5 -->
+<!-- END_f4aa12af19ba08e1448d7eafc9f55e67 -->
 
-<!-- START_48a3115be98493a3c866eb0e23347262 -->
+<!-- START_a4a2abed1e8e8cad5e6a3282812fe3f3 -->
 ## Update the specified user in storage.
 
 > Example request:
 
 ```bash
 curl -X PUT \
-    "http://localhost/api/users/1" \
+    "http://localhost/api/user/1" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"username":"dolor","email":"quisquam","password":"ad","image":"dolores","role_id":16,"news_size_id":5}'
+    -d '{"username":"dolores","email":"dignissimos","password":"eum","image":"exercitationem","role_id":11,"news_size_id":4}'
 
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost/api/users/1"
+    "http://localhost/api/user/1"
 );
 
 let headers = {
@@ -7349,12 +5159,12 @@ let headers = {
 };
 
 let body = {
-    "username": "dolor",
-    "email": "quisquam",
-    "password": "ad",
-    "image": "dolores",
-    "role_id": 16,
-    "news_size_id": 5
+    "username": "dolores",
+    "email": "dignissimos",
+    "password": "eum",
+    "image": "exercitationem",
+    "role_id": 11,
+    "news_size_id": 4
 }
 
 fetch(url, {
@@ -7369,9 +5179,9 @@ fetch(url, {
 
 
 ### HTTP Request
-`PUT api/users/{user}`
+`PUT api/user/{user}`
 
-`PATCH api/users/{user}`
+`PATCH api/user/{user}`
 
 #### Body Parameters
 Parameter | Type | Status | Description
@@ -7383,23 +5193,23 @@ Parameter | Type | Status | Description
         `role_id` | integer |  optional  | Role id
         `news_size_id` | integer |  optional  | News size id
     
-<!-- END_48a3115be98493a3c866eb0e23347262 -->
+<!-- END_a4a2abed1e8e8cad5e6a3282812fe3f3 -->
 
-<!-- START_d2db7a9fe3abd141d5adbc367a88e969 -->
+<!-- START_4bb7fb4a7501d3cb1ed21acfc3b205a9 -->
 ## Remove the specified user from storage.
 
 > Example request:
 
 ```bash
 curl -X DELETE \
-    "http://localhost/api/users/1" \
+    "http://localhost/api/user/1" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
 ```
 
 ```javascript
 const url = new URL(
-    "http://localhost/api/users/1"
+    "http://localhost/api/user/1"
 );
 
 let headers = {
@@ -7418,9 +5228,9 @@ fetch(url, {
 
 
 ### HTTP Request
-`DELETE api/users/{user}`
+`DELETE api/user/{user}`
 
 
-<!-- END_d2db7a9fe3abd141d5adbc367a88e969 -->
+<!-- END_4bb7fb4a7501d3cb1ed21acfc3b205a9 -->
 
 
