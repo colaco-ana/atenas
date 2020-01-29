@@ -1,0 +1,95 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.a_mainview_header{
+  padding: 10px 15px;
+  border-bottom: 1px solid #DCDCDC;
+  display: flex;
+  justify-content: space-around;
+  height: 51px;
+}
+
+.a_mainview_header .a_mainview_logo img{
+  height: 27px;
+  width: auto;
+}
+
+.a_mainview_header .a_mainview_title {
+  text-transform: uppercase;
+}
+
+.a_mainview_header .a_mainview_actions img {
+  height: 27px;
+  width: auto;
+  margin-left: 15px;
+}
+
+.a-mainview{
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: space-evenly;
+    background: #D71424;
+    padding: 10px !important;
+    padding-top: 5px !important;
+    height: 60px;
+}
+
+.a-mainview a.nav-link.active{
+  background-color: transparent;
+  color: #FFF;
+  border-color: transparent;
+}
+
+.a-mainview a{
+  color: #FFF;
+  background-repeat: no-repeat;
+  background-position: top;
+  background-size: auto 30px;
+  padding-top: 35px;
+  font-size: 10px;
+  line-height: 12px;
+  padding-bottom: 0;
+}
+
+.a-mainview #noanim-tab-example-tab-meu_jornal{
+  background-image: url('../src/images/jornal_personalizado.png');
+}
+
+.a-mainview #noanim-tab-example-tab-meu_jornal.active{
+  background-image: url('../src/images/jornal_personalizado_ativo.png');
+}
+
+.a-mainview #noanim-tab-example-tab-home{
+  background-image: url('../src/images/home.png');
+}
+
+.a-mainview #noanim-tab-example-tab-home.active{
+  background-image: url('../src/images/home_ativo.png');
+}
+
+.a-mainview #noanim-tab-example-tab-guardados{
+  background-image: url('../src/images/guardados.png');
+}
+
+.a-mainview #noanim-tab-example-tab-guardados.active{
+  background-image: url('../src/images/guardados_ativo.png');
+}
+
+
+.a-mainview a:before{
+  
+}
